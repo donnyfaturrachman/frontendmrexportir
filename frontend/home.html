@@ -1,0 +1,324 @@
+<html>
+
+<head>
+    <title>mrexportir</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+    body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .img-responsive {
+            width: 100%;
+            height: auto;
+        }
+        
+        .logo-top {
+            max-width: 150px;
+        }
+        
+        .navbar-nav>li {
+            margin-left: 10px;
+        }
+        
+        .navbar-nav>li>a,
+        .navbar-nav>li>a:hover,
+        .navbar-nav>li>a:active {
+            color: #444444;
+            background: none;
+            font-weight: bold;
+            border: none;
+        }
+        
+        .btn-login {
+            margin-top: 5px;
+            border: 2px solid #444444;
+            border-radius: 5px;
+        }
+        
+        .btn-login a {
+            padding: 7px 24px !important;
+        }
+        
+        .easy {
+            color: #C2262D;
+        }
+        
+        .section-top h1 {
+            font-weight: bolder;
+            margin-top: 10%;
+        }
+        
+        .nav-tabs {
+            border: none;
+        }
+        
+        .nav-tabs>li.active>a,
+        .nav-tabs>li.active>a:focus,
+        .nav-tabs>li.active>a:hover {
+            border: none !important;
+        }
+        
+        .nav-tabs {
+            display: table;
+            margin: 0 auto;
+            padding-top: 25px;
+        }
+        
+        .nav-tabs li {
+            background: #F4F0EB;
+        }
+        
+        .nav-tabs li a {
+            color: #444444;
+            padding: 4px 50px;
+        }
+        
+        .nav-tabs li.active {
+            background: #444444;
+        }
+        
+        .nav-tabs li.active a,
+        .nav-tabs>li.active>a,
+        .nav-tabs>li.active>a:focus,
+        .nav-tabs>li.active>a:hover {
+            color: #ffff;
+            background: #444444;
+            padding: 5px 50px;
+        }
+        
+        .nav-tabs li.active h4 {
+            font-weight: bolder;
+        }
+        
+        .box-top-new {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 30px 51px;
+        }
+        
+        .addon-left {
+            padding: 0px;
+            width: 0px;
+            margin: 0px;
+            border: none;
+        }
+        
+        button.btn.btn-cek {
+            background: #C2262D;
+            color: #fff;
+            padding: 3px 15px;
+        }
+        
+        button.btn.btn-cek h4 {
+            font-weight: bold;
+        }
+        
+        .box-result-top {
+            background-color: #F7F7F7;
+            padding: 10px 13px;
+        }
+        
+        thead.thead-dark {
+            background: #F4F0EB;
+        }
+        
+        .table>tbody>tr>td,
+        .table>tbody>tr>.row {
+            padding: 30px;
+            font-weight: bold;
+        }
+        
+        .icon-new {
+            max-width: 60px;
+            padding-top: 15px;
+            padding-left: 20px;
+        }
+        
+        td.column-button {
+            padding-top: 16px;
+        }
+        
+        b.compleate {
+            font-size: 10px;
+            color: #10680D;
+            font-weight: bolder;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class=" container ">
+            <div class="navbar-header ">
+                <button type="button " class="navbar-toggle collapsed " data-toggle="collapse " data-target="#navbar " aria-expanded="false " aria-controls="navbar ">
+              <span class="sr-only ">Mr Exportir</span>
+              <span class="icon-bar "></span>
+              <span class="icon-bar "></span>
+              <span class="icon-bar "></span>
+            </button>
+                <a class="navbar-brand " href="# ">
+                    <img src="images/redlogo.png " class="img-responsive logo-top ">
+                </a>
+            </div>
+            <div id="navbar " class="navbar-collapse collapse ">
+
+                <ul class="nav navbar-nav navbar-right ">
+                    <li><a href="#">Layanan</a></li>
+                    <li><a href="#">Panduan Expor</a></li>
+                    <li><a href="#">ExportKu</a></li>
+                    <li><a href="#">Lacak Kiriman</a></li>
+                    <li class="btn-login"><a href="#">Masuk</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+        <!--/.container-fluid -->
+    </nav>
+    <div class="container">
+        <div class="section-top">
+            <h1 class="text-center">Export Jadi <span class="easy">Mudah</span></h1>
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a data-toggle="tab" href="#home">
+                        <h4>Lacak Kiriman</h4>
+                    </a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#menu1">
+                        <h4>Cek Harga</h4>
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                    <div class="box-top-new">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Dari</span>
+                                    <input id="msg" type="text" class="form-control" name="msg" placeholder="Dari">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Ke</span>
+                                    <input id="msg" type="text" class="form-control" name="msg" placeholder="Ke">
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Via</span>
+                                    <select id="lunch" class="selectpicker form-control" data-live-search="true" title="Please select a lunch ...">
+                                      <option>Udara</option>
+                                      <option>Laut</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Tipe</span>
+                                    <select id="lunch" class="selectpicker form-control" data-live-search="true" title="Please select a lunch ...">
+                                      <option>Paket</option>
+                                      <option>Dokumen</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+
+                                <div class="input-group">
+
+                                    <input id="msg" type="text" class="form-control" name="msg" placeholder="P">
+                                    <span class="input-group-addon addon-left"></span>
+                                    <input id="msg" type="text" class="form-control" name="msg" placeholder="L">
+                                    <span class="input-group-addon addon-left"></span>
+                                    <input id="msg" type="text" class="form-control" name="msg" placeholder="T">
+                                    <span class="input-group-addon">cm</span>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="input-group">
+
+                                    <input id="msg" type="text" class="form-control" name="msg" placeholder="Berat">
+                                    <span class="input-group-addon">Kg</span>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="box-result-top">
+                                    <span>Total Volume: </span>
+                                    <span><b>0.001 m3</b> </span>
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                    <span>Total Berat: </span>
+                                    <span><b>10kg</b> </span>
+                                </div>
+                            </div>
+                            <div class="col-md-8 text-right">
+                                <button class="btn btn-cek"><h4>Dapatkan Harga Terbaik</h4></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="widget-price">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Moda</th>
+                        <th scope="col">Layanan</th>
+                        <th scope="col">Harga</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"> <img src="images/plane.png " class="icon-new"></th>
+                        <td>Air Freight</td>
+                        <td>Door To Door &nbsp;<i class="fa fa-info-circle"></i></td>
+                        <td>
+                            <b class="compleate"><i class="fa fa-check-circle"></i>&nbsp; Layanan Lengkap</b> <br/>Rp 1.500.000 </td>
+                        <td class="column-button">
+                            <button class="btn btn-cek"><h4>Kirim Sekarang</h4></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img src="images/plane.png " class="icon-new"></th>
+                        <td>Air Freight</td>
+                        <td>Door To Port &nbsp;<i class="fa fa-info-circle"></i></td>
+                        <td>
+                            Rp 1.500.000
+                        </td>
+                        <td class="column-button">
+                            <button class="btn btn-cek"><h4>Kirim Sekarang</h4></button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+    <!-- Latest compiled and minified JavaScript -->
+
+</body>
+
+</html>
