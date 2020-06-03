@@ -68,8 +68,10 @@
                         var tipe = $('#tipe_pengiriman').find(":selected").val()
                         if (tipe == 1) {
                             $(".tipe_delivery").text("Air Freight")
+                            $(".icon-new").attr("src", "images/plane.png");
                         } else {
                             $(".tipe_delivery").text("Sea Freight")
+                            $(".icon-new").attr("src", "images/ship.png");
                         }
                         $(".dtd").text(convertToRupiah(data.paket.door_to_door))
                         $(".dtp").text(convertToRupiah(data.paket.door_to_port))
@@ -283,11 +285,10 @@
             text-transform: uppercase;
         }
         
-
         i.fa.fa-check-circle {
             font-size: 14px !important;
         }
-
+        
         .box-red {
             background-color: #C2262D;
             padding: 50px 40px;
