@@ -204,6 +204,8 @@ i.fa.fa-facebook-f {
 }
 
 
+/* tooltip */
+
 [data-tooltip] {
     position: relative;
     z-index: 10;
@@ -335,7 +337,6 @@ i.fa.fa-facebook-f {
   [data-tooltip-location="right"]:hover:after {
     transform: translateY(50%) scaleX(1);
   }
-  
   
   
   /* BOTTOM */
