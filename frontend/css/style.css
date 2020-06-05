@@ -65,16 +65,34 @@ button.btn.btn-cek h4 {
 .box-result-top {
     background-color: #F7F7F7;
     padding: 10px 13px;
+    height: 60px;
 }
 
 thead.thead-dark {
     background: #F4F0EB;
 }
 
+h4 {
+    font-weight: 800 !important;
+}
+
+
+.table-harga {
+    border-collapse: collapse;
+    border: 0px solid #707070;
+    border-radius: 8px !important;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px #bebebe;
+}
+
 .table>tbody>tr>td,
 .table>tbody>tr>.row {
     padding: 30px;
     font-weight: bold;
+}
+
+.table>thead>tr>th {
+    padding-left: 30px;
 }
 
 .icon-new {
