@@ -94,6 +94,7 @@
         }
     </script>
     <script>
+        var clicked = false
         $(document).ready(function() {
             $('.single-item').slick({
                 slidesToShow: 1,
@@ -103,6 +104,21 @@
                 $("#status").hide()
                 $(".widget-price").hide()
             })
+            $(".btn-panel").click(function(event) {
+                event.preventDefault();
+                $(".panel-table").slideToggle("slow");
+                if (clicked == false) {
+                    $(".text").text(" Sembunyikan Rincian")
+                    $("i.fa.fa-chevron-down").hide()
+                    $("i.fa.fa-chevron-up").show()
+                    clicked = true
+                } else {
+                    $(".text").text(" Lihat Rincian")
+                    $("i.fa.fa-chevron-down").show()
+                    $("i.fa.fa-chevron-up").hide()
+                    clicked = false
+                }
+            });
         })
     </script>
     <style>
@@ -198,6 +214,83 @@
         .slick-dots {
             bottom: 8px;
         }
+        
+        .group-addon-resi {
+            padding: 0px;
+            background-color: #C2262D;
+            border: 1px solid #C2262D;
+            color: #C2262D;
+            border-radius: 4px;
+        }
+        
+        .header-resi {
+            background: #F4F0EB;
+            padding: 3px 21px;
+            border-top-left-radius: 11px;
+            border-top-right-radius: 11px;
+        }
+        
+        .widget-resi {
+            margin-bottom: 40px;
+        }
+        
+        .body-resi {
+            padding: 30px 20px;
+            border: 1px solid #ddd;
+        }
+        
+        .body-resi ul li {
+            display: inline-block;
+            text-align: center;
+            padding-right: 160px;
+            position: relative;
+        }
+        
+        .body-resi ul li:first-child hr {
+            width: 280px;
+        }
+        
+        .body-resi ul li:last-child {
+            padding-right: 0px;
+        }
+        
+        .body-resi ul li:last-child hr {
+            display: none;
+        }
+        
+        .body-resi ul li hr {
+            border-top: 1px dashed black;
+            position: absolute;
+            top: 29px;
+            right: -69px;
+            height: 2px;
+            width: 233px;
+        }
+        
+        .footer-resi {
+            background: #F4F0EB;
+            padding: 3px 21px;
+        }
+        
+        .footer-resi a {
+            color: #BF202F;
+            text-decoration: none;
+        }
+        
+        .panel-table {
+            display: none;
+        }
+        
+        .panel-table thead {
+            background: #C2262D;
+            color: #fff;
+            font-size: 20px;
+        }
+        
+        .panel-table .table>thead>tr>th {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
     </style>
 </head>
 
@@ -234,6 +327,7 @@
         <div class="section-top">
             <h1 class="text-center">Export Jadi <span class="easy">Mudah</span></h1>
             <ul class="nav nav-tabs">
+
                 <li class="active tab-lacak">
                     <a data-toggle="tab" href="#home">
                         <h4>Lacak Kiriman</h4>
@@ -249,7 +343,20 @@
 
             <div class="tab-content">
                 <div id="home" class="tab-pane fade in active">
-
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class=" box-top-new ">
+                                <div class="row ">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <input id="dimensi" type="text" class="form-control" name="noresi" placeholder="Nomor Resi">
+                                            <span class="input-group-addon group-addon-resi">  <button  class="btn btn-cek"><b>Lacak</b></button></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="menu1" class="tab-pane fade">
                     <div class="box-top-new">
@@ -329,6 +436,74 @@
         </div>
         <br/>
         <br/>
+        <div class="widget-resi">
+            <div class="header-resi">
+                <h4>EXP12345678TD</h4>
+            </div>
+            <div class="body-resi">
+
+                <ul>
+
+                    <li>
+                        <hr/>
+                        <img src="images/document.png" />
+                        <h4>Document Handling</h4>
+                    </li>
+                    <li>
+                        <hr/>
+                        <img src="images/collected.png" />
+                        <h4>Collected</h4>
+                    </li>
+                    <li>
+                        <hr/>
+                        <img src="images/delivering.png" />
+                        <h4>Delivering</h4>
+                    </li>
+                    <li>
+                        <hr/>
+                        <img src="images/delivered.png" />
+                        <h4>Delivered</h4>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-resi">
+                <h4><a class="btn-panel" href="#"><i class="fa fa-chevron-down"></i> <i class="fa fa-chevron-up" style="display: none;"></i> <span class="text">Lihat Rincian</span></a></h4>
+            </div>
+            <div class="panel-table">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Local Time</th>
+                            <th>Location</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>08/03/2020, 20:15</td>
+                            <td>Jakarta, Indonesia</td>
+                            <td>Shipment delivered in good condition</td>
+                        </tr>
+                        <tr>
+                            <td>08/03/2020, 20:15</td>
+                            <td>Jakarta, Indonesia</td>
+                            <td>Shipment delivered in good condition</td>
+                        </tr>
+                        <tr>
+                            <td>08/03/2020, 20:15</td>
+                            <td>Jakarta, Indonesia</td>
+                            <td>Shipment delivered in good condition</td>
+                        </tr>
+                        <tr>
+                            <td>08/03/2020, 20:15</td>
+                            <td>Jakarta, Indonesia</td>
+                            <td>Shipment delivered in good condition</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
         <div class="widget-price" style="display: none;">
             <table class="table table-harga">
                 <thead class="thead-dark">
