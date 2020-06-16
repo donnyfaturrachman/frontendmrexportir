@@ -513,3 +513,14 @@ i.fa.fa-facebook-f {
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
+
+/*GENERAL*/
+
+.container-full {
+    overflow: hidden;
+}
+
+.nopadding {
+    padding: 0px;
+}
