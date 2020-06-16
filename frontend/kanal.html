@@ -126,12 +126,17 @@
         .slider-wrapper {
             margin-top: 59px;
         }
+        
+        .thumbnail-side:hover {
+            cursor: pointer;
+        }
     </style>
     <script>
         $(document).ready(function() {
             // slick carousel
             $(".thumbnail-side").click(function() {
                 $('iframe').attr('src', $(this).attr('data-video'));
+                $('.title-video').text($(this).attr('data-title'))
             })
 
             $('.slider').slick({
@@ -190,7 +195,7 @@
                         <i class="fa fa-chevron-up prev" aria-hidden="true"></i>
 
                         <div class="slider">
-                            <div class="thumbnail-side" data-video="https://www.youtube.com/embed/CcK5E4lJoTg">
+                            <div class="thumbnail-side" data-video="https://www.youtube.com/embed/CcK5E4lJoTg" data-title="Jasa Ekspor Kacang Mede">
                                 <div class="row">
                                     <div class="col-md-5">
                                         <img src="images/pic.png" class="img-responsive" />
@@ -203,7 +208,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="thumbnail-side" data-video="https://www.youtube.com/embed/CcK5E4lJoTg">
+                            <div class="thumbnail-side" data-video="https://www.youtube.com/embed/CcK5E4lJoTg" data-title="Jasa Ekspor Kacang Mede">
                                 <div class="row">
                                     <div class="col-md-5">
                                         <img src="images/pic.png" class="img-responsive" />
@@ -216,7 +221,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="thumbnail-side" data-video="https://www.youtube.com/embed/CcK5E4lJoTg">
+                            <div class="thumbnail-side" data-video="https://www.youtube.com/embed/CcK5E4lJoTg" data-title="Jasa Ekspor Kacang Mede">
                                 <div class="row">
                                     <div class="col-md-5">
                                         <img src="images/pic.png" class="img-responsive" />
@@ -229,7 +234,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="thumbnail-side big">
+                            <div class="thumbnail-side big" data-video="https://www.youtube.com/embed/CcK5E4lJoTg" data-title="Jasa Ekspor Kacang Mede">
                                 <div class="row">
                                     <div class="col-md-5">
                                         <img src="images/pic.png" class="img-responsive" />
