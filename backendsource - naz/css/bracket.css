@@ -144,7 +144,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Montserrat", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
@@ -1767,6 +1767,38 @@ textarea.custom-file-input.parsley-error:focus ~ .custom-file-label {
 a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none; }
+
+.btn-kirim{
+  width:30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-me{
+  color: #fff;
+  background-color: #C2262D;
+  border-color: #C2262D; }
+  .btn-me:hover {
+    color: #fff;
+    background-color: #8a1217;
+    border-color: #8a1217; }
+  .btn-me:focus, .btn-me.focus {
+    box-shadow: 0 0 0 0.2rem rgba(198, 8, 8, 0.5); }
+  .btn-me.disabled, .btn-me:disabled {
+    color: #fff;
+    background-color: #8a1217;
+    border-color: #8a1217; }
+  .btn-me:not(:disabled):not(.disabled):active, .btn-me:not(:disabled):not(.disabled).active,
+  .show > .btn-me.dropdown-toggle {
+    color: #fff;
+    background-color: #8a1217;
+    border-color: #8a1217; }
+    .btn-me:not(:disabled):not(.disabled):active:focus, .btn-me:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-me.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem rgba(8, 102, 198, 0.5); }
+
+
+
 
 .btn-primary {
   color: #fff;
@@ -4059,6 +4091,12 @@ button.close {
   .modal-sm {
     max-width: 300px; } }
 
+
+@media (min-width: 992px) {
+      .modal-conf-order {
+        max-width: 70%; } }
+
+    
 @media (min-width: 992px) {
   .modal-lg {
     max-width: 800px; } }
@@ -4068,7 +4106,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Montserrat", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -4153,7 +4191,7 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Montserrat", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -11799,7 +11837,7 @@ table.dataTable {
 
 /* Setup basic CSS for Label */
 .jqvmap-pin {
-  font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Montserrat", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
   cursor: default;
   pointer-events: none; }
 
@@ -12638,7 +12676,7 @@ textarea.parsley-success:focus {
     padding: 8px 15px;
     background-image: none;
     background-color: #ced4da;
-    font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+    font-family: "Montserrat", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
     font-size: 12px;
     text-shadow: none;
     text-transform: capitalize;
@@ -12650,7 +12688,7 @@ textarea.parsley-success:focus {
       text-shadow: none; }
 
 .sp-button-container .sp-cancel {
-  font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Montserrat", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 12px;
   text-transform: capitalize;
   color: #6c757d !important; }
@@ -12747,7 +12785,7 @@ textarea.parsley-success:focus {
       .card-header.note-toolbar > .btn-group .dropdown-item blockquote,
       .card-header.note-toolbar > .btn-group .dropdown-item pre {
         margin-bottom: 0;
-        font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+        font-family: "Montserrat", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
         font-size: 13px; }
       .card-header.note-toolbar > .btn-group .dropdown-item h1, .card-header.note-toolbar > .btn-group .dropdown-item h2, .card-header.note-toolbar > .btn-group .dropdown-item h3, .card-header.note-toolbar > .btn-group .dropdown-item h4, .card-header.note-toolbar > .btn-group .dropdown-item h5, .card-header.note-toolbar > .btn-group .dropdown-item h6 {
         font-size: 13px;
@@ -12759,7 +12797,7 @@ textarea.parsley-success:focus {
     .card-header.note-toolbar > .btn-group .dropdown-fontname .dropdown-item {
       padding-left: 5px; }
       .card-header.note-toolbar > .btn-group .dropdown-fontname .dropdown-item span {
-        font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif !important;
+        font-family: "Montserrat", "Fira Sans", "Helvetica Neue", Arial, sans-serif !important;
         font-size: 12px; }
 
 /* ---------------------------------------------- */
@@ -13285,7 +13323,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child::
   .br-menu-link:focus, .br-menu-link:active {
     outline: none; }
   .br-menu-link.active {
-    background-image: linear-gradient(to right, #1CAF9A 0%, #17A2B8 100%);
+    background-color: #7e7e7e;
     background-repeat: repeat-x;
     color: #fff; }
     .br-menu-link.active::after {
@@ -34007,7 +34045,7 @@ a.hover-white-8:hover, a.hover-white-8:focus {
   font-family: "Hind", "Helvetica Neue", Arial, sans-serif; }
 
 .tx-firasans {
-  font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif; }
+  font-family: "Montserrat", "Fira Sans", "Helvetica Neue", Arial, sans-serif; }
 
 .tx-source {
   font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif; }
@@ -40139,3 +40177,74 @@ a.hover-white-8:hover, a.hover-white-8:focus {
 
 .mx-wd-1350 {
   max-width: 1350px; }
+
+
+  /* // my shipment */
+
+
+  .icon-tracking {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+span.status-tracking {
+  background-color: transparent;
+  border-style: solid;
+  border-width: 3px !important;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  width: 40px;
+  height: 40px;
+  font-size: 17px;
+  position: static!important;
+}
+
+span.tr-merah{
+  border-color: #c2262d;
+  color: #c2262d;
+}
+
+span.tr-hijau{
+  border-color: #1fa538;
+  color: #1fa538;
+}
+
+span.tr-kuning{
+  border-color: #f60;
+  color: #f60;
+}
+
+
+tr.clickable-row{
+  cursor: pointer;
+}
+
+.dropdown-menu-tracking {
+  position: absolute;
+  border-top: 0;
+  margin-top: 1px;
+  box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.16);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  left: auto !important;
+  right: -35px !important;
+  /* top: 40px !important; */
+    /* transform: none !important;
+    will-change: unset !important; */
+  }
+  .dropdown-menu-tracking::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -2px;
+    right: 0;
+    height: 4px;
+    background-color: #fff;
+    z-index: 1040; }
+    
