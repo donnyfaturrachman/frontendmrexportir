@@ -162,6 +162,7 @@ hr {
 
 .hr-shipment {
     border-top: 1.17px solid #0866C6;
+    margin-top: -10px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1777,6 +1778,13 @@ fieldset:disabled a.btn {
   margin-left: auto;
   margin-right: auto;
 }
+
+@media (max-width: 767px) {
+  .btn-kirim{
+    width:80%;
+  } 
+}
+
 
 .btn-me{
   color: #fff;
