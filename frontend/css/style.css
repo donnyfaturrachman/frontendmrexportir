@@ -9,6 +9,11 @@ body {
     height: auto;
 }
 
+.navbar {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
 .logo-top {
     max-width: 150px;
 }
