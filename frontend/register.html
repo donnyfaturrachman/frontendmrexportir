@@ -21,14 +21,23 @@
 </head>
 <style>
     .logo-top {
-        max-width: 150px;
+        max-width: 200px;
+    }
+    
+    .logo-bottom {
+        width: 80%;
     }
     
     section.wrapper {
         background-image: url('images/bg_regsiter.png');
         background-color: #F8F8F8;
-        background-size: 100% 100%;
+        background-size: 100% auto;
+        background-position: center bottom;
         background-repeat: no-repeat;
+    }
+    
+    .widget-login {
+        margin-top: 50px;
     }
     
     .login-box {
@@ -56,6 +65,15 @@
     
     ul.nav.nav-tabs {
         width: 100%;
+    }
+    
+    .form-group-odd {
+        margin-top: 35px;
+    }
+    
+    .form-control {
+        height: 42px;
+        border: 1px solid #8e8e8e;
     }
 </style>
 
@@ -111,7 +129,7 @@
                 </div>
                 <div class="tab-content">
                     <div id="personal" class="tab-pane fade in active">
-                        <div class="col-md-6 col-md-offset-7 col-xs-12 widget-login">
+                        <div class="col-md-6 col-md-offset-7 col-xs-12">
                             <div class="login-box">
                                 <form action="/action_page.php">
                                     <div class="form-group">
@@ -120,22 +138,19 @@
                                     <div class="form-group">
                                         <input type="text" placeholder="Nama Belakang" class="form-control">
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group form-group-odd">
                                         <input type="email" placeholder="E-mail" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" placeholder="No.Hp" class="form-control">
                                     </div>
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Negara" class="form-control">
-                                    </div>
-                                    <div class="form-group">
+                                    <div class="form-group form-group-odd">
                                         <input type="password" placeholder="Password" class="form-control" id="pwd">
                                     </div>
                                     <div class="form-group">
                                         <input type="password" placeholder="Ulangi Password" class="form-control" id="pwd">
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group form-group-odd">
                                         <label class="checkbox-inline">
                                             <input type="checkbox" value="">Saya menyetujui syarat dan ketentuan dan pernyataan privasi MisterExportir
                                           </label>
@@ -155,11 +170,14 @@
                         </div>
                     </div>
                     <div id="perusahaan" class="tab-pane fade in ">
-                        <div class="col-md-6 col-md-offset-7 col-xs-12 widget-login">
+                        <div class="col-md-6 col-md-offset-7 col-xs-12">
                             <div class="login-box">
                                 <form action="/action_page.php">
                                     <div class="form-group">
                                         <input type="text" placeholder="Nama Perusahaan" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" placeholder="NPWP" class="form-control">
                                     </div>
                                     <b>Penanggung Jawab</b>
                                     <br/>
@@ -170,22 +188,19 @@
                                     <div class="form-group">
                                         <input type="text" placeholder="Nama Belakang" class="form-control">
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group form-group-odd">
                                         <input type="email" placeholder="E-mail" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" placeholder="No.Hp" class="form-control">
                                     </div>
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Negara" class="form-control">
-                                    </div>
-                                    <div class="form-group">
+                                    <div class="form-group form-group-odd">
                                         <input type="password" placeholder="Password" class="form-control" id="pwd">
                                     </div>
                                     <div class="form-group">
                                         <input type="password" placeholder="Ulangi Password" class="form-control" id="pwd">
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group form-group-odd">
                                         <label class="checkbox-inline">
                                             <input type="checkbox" value="">Saya menyetujui syarat dan ketentuan dan pernyataan privasi MisterExportir
                                           </label>
@@ -215,8 +230,8 @@
                 <br/>
                 <div class="col-md-12 ">
                     <div class="row">
-                        <div class="col-md-2 ">
-                            <img src="images/footer.png " class="img-responsive " />
+                        <div class="col-md-3 ">
+                            <img src="images/footer.png " class="img-responsive logo-bottom">
                         </div>
                     </div>
                     <br/>

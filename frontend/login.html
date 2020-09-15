@@ -21,13 +21,18 @@
 </head>
 <style>
     .logo-top {
-        max-width: 150px;
+        max-width: 200px;
+    }
+    
+    .logo-bottom {
+        width: 80%;
     }
     
     section.wrapper {
         background-image: url('images/bg_login_central.png');
         background-color: #F8F8F8;
-        background-size: 100% 100%;
+        background-size: 100% auto;
+        background-position: center bottom;
         background-repeat: no-repeat;
     }
     
@@ -55,6 +60,11 @@
     
     .copyrighted {
         font-weight: 500;
+    }
+    
+    .form-control {
+        height: 42px;
+        border: 1px solid #8e8e8e;
     }
 </style>
 
@@ -131,8 +141,8 @@
                 <br/>
                 <div class="col-md-12 ">
                     <div class="row">
-                        <div class="col-md-2 ">
-                            <img src="images/footer.png " class="img-responsive " />
+                        <div class="col-md-3 ">
+                            <img src="images/footer.png " class="img-responsive logo-bottom">
                         </div>
                     </div>
                     <br/>
