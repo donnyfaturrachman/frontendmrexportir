@@ -184,7 +184,7 @@
         .fs-14 {
             font-size: 14px!important;
         }
-        .content-image img {
+        .video-playlist .content-image img {
             margin-top: 10%;
         }
         .custom-scrollbar::-webkit-scrollbar {
@@ -225,6 +225,7 @@
             padding-top: 1px;
             padding-left: 15px;
             padding-right: 15px;
+            padding-bottom: 15px;
         }
         .content-text-slider h2 {
             font-size: 2rem;
@@ -250,6 +251,10 @@
             color: black;
             font-size: 96px;
         }
+        .slider {
+            width: 100%;
+            overflow: hidden;
+        }
         .slider .item {
             position: relative;
             overflow: hidden;
@@ -266,6 +271,35 @@
         .slider .slick-slide {
             margin: 0 12px;
         }
+        .img-kategori {
+            width: 270px;
+            margin-top: unset;
+        }
+        .article--kategori .content-text {
+            background-color: #F5F5F5;
+            padding: 10px;
+            padding-bottom: 0px;
+        }
+        .article--kategori .content-text .content-title {
+            margin-top: unset;
+        }
+        .article--video .content-image {
+            margin-left: 1rem;
+        }
+        .section-kategori {
+            margin-bottom: 5rem;
+        }
+.slider .item a:not([class*="title"]) img {
+    display: block;
+    width: 100%;
+}
+.slider .item a:not([class*="title"]) {
+    display: block;
+}
+.slick-list, .slick-slider {
+    position: relative;
+    display: block;
+}
     </style>
 
     <body>
@@ -490,7 +524,6 @@
                                         <h2>Manfaat Ekspor untuk Industri Dalam Negeri</h2>
                                     </a>
                                     <div class="fs-12 media-explainer">05 Maret 2019</div>
-                                    <br>
                                     <p>Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet.</p>
                                 </div>
                             </div>
@@ -505,7 +538,6 @@
                                         <h2>Manfaat Ekspor untuk Industri Dalam Negeri</h2>
                                     </a>
                                     <div class="fs-12 media-explainer">05 Maret 2019</div>
-                                    <br>
                                     <p>Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet.</p>
                                 </div>
                             </div>
@@ -520,7 +552,6 @@
                                         <h2>Manfaat Ekspor untuk Industri Dalam Negeri</h2>
                                     </a>
                                     <div class="fs-12 media-explainer">05 Maret 2019</div>
-                                    <br>
                                     <p>Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet.</p>
                                 </div>
                             </div>
@@ -535,113 +566,130 @@
                                         <h2>Manfaat Ekspor untuk Industri Dalam Negeri</h2>
                                     </a>
                                     <div class="fs-12 media-explainer">05 Maret 2019</div>
-                                    <br>
                                     <p>Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <a class="lihat-semua-a text-right" href="#">Lihat Semua >></a>
+                <div class="text-right">
+                    <a class="lihat-semua-a" href="#">Lihat Semua >></a>
+                </div>
             </div>
         </section>
 
-        <section class="wrapper">
+        <section class="wrapper section-kategori">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
                         <h2>Kategori 1</h2>
                         <div class="bottom-line"></div>
-                        <article class="article article--video d-flex mb-4">
-                            <div class="content-image scale mb-3 flex-120 position-relative mr-3">
+                        <article class="article article--kategori d-flex mb-4">
+                            <div class="content-image scale mb-3 flex-120 position-relative ">
                                 <a href="#">
-                                    <img class="img-fullwidth rounded" src="images/blog_thumb1.png" alt="Image title">
+                                    <img class="img-fullwidth rounded img-kategori" src="images/blog_thumb1.png" alt="Image title">
                                 </a>
                             </div>
                             <div class="content-text">
                                 <a href="#">
                                     <h3 class="content-title content-title--detail-list mb-0">Mengenjot Ekspor Perikanan dan Pertanian</h3>
                                 </a>
-                                <div class="fs-12 media-explainer">05 Maret 2019</div>
-                                <p>Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet accusam eos. Vix sale admodum gloriatur </p>
+                                <p>
+                                    <div class="fs-12 media-explainer">05 Maret 2019</div>
+                                </p>
+                                <p class="fs-12 ">Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet accusam eos. Vix sale admodum gloriatur </p>
                             </div>
                         </article>
-                        <article class="article article--video d-flex mb-4">
-                            <div class="content-image scale mb-3 flex-120 position-relative mr-3">
+                        <article class="article article--kategori d-flex mb-4">
+                            <div class="content-image scale mb-3 flex-120 position-relative ">
                                 <a href="#">
-                                    <img class="img-fullwidth rounded" src="images/blog_thumb1.png" alt="Image title">
+                                    <img class="img-fullwidth rounded img-kategori" src="images/blog_thumb1.png" alt="Image title">
                                 </a>
                             </div>
                             <div class="content-text">
                                 <a href="#">
                                     <h3 class="content-title content-title--detail-list mb-0">Mengenjot Ekspor Perikanan dan Pertanian</h3>
                                 </a>
-                                <div class="fs-12 media-explainer">05 Maret 2019</div>
-                                <p>Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet accusam eos. Vix sale admodum gloriatur </p>
+                                <p>
+                                    <div class="fs-12 media-explainer">05 Maret 2019</div>
+                                </p>
+                                <p class="fs-12 ">Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet accusam eos. Vix sale admodum gloriatur </p>
                             </div>
                         </article>
-                        <article class="article article--video d-flex mb-4">
-                            <div class="content-image scale mb-3 flex-120 position-relative mr-3">
+                        <article class="article article--kategori d-flex mb-4">
+                            <div class="content-image scale mb-3 flex-120 position-relative ">
                                 <a href="#">
-                                    <img class="img-fullwidth rounded" src="images/blog_thumb1.png" alt="Image title">
+                                    <img class="img-fullwidth rounded img-kategori" src="images/blog_thumb1.png" alt="Image title">
                                 </a>
                             </div>
                             <div class="content-text">
                                 <a href="#">
                                     <h3 class="content-title content-title--detail-list mb-0">Mengenjot Ekspor Perikanan dan Pertanian</h3>
                                 </a>
-                                <div class="fs-12 media-explainer">05 Maret 2019</div>
-                                <p>Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet accusam eos. Vix sale admodum gloriatur </p>
+                                <p>
+                                    <div class="fs-12 media-explainer">05 Maret 2019</div>
+                                </p>
+                                <p class="fs-12 ">Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet accusam eos. Vix sale admodum gloriatur </p>
                             </div>
                         </article>
-                        <a class="lihat-semua-a text-right" href="#">Lihat Semua >></a>
+                        <div class="text-right">
+                            <a class="lihat-semua-a" href="#">Lihat Semua >></a>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <h2>Kategori 2</h2>
                         <div class="bottom-line"></div>
-                        <article class="article article--video d-flex mb-4">
-                            <div class="content-image scale mb-3 flex-120 position-relative mr-3">
+                        <article class="article article--kategori d-flex mb-4">
+                            <div class="content-image scale mb-3 flex-120 position-relative ">
                                 <a href="#">
-                                    <img class="img-fullwidth rounded" src="images/blog_thumb1.png" alt="Image title">
+                                    <img class="img-fullwidth rounded img-kategori" src="images/blog_thumb1.png" alt="Image title">
                                 </a>
                             </div>
                             <div class="content-text">
                                 <a href="#">
                                     <h3 class="content-title content-title--detail-list mb-0">Mengenjot Ekspor Perikanan dan Pertanian</h3>
                                 </a>
-                                <div class="fs-12 media-explainer">05 Maret 2019</div>
-                                <p>Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet accusam eos. Vix sale admodum gloriatur </p>
+                                <p>
+                                    <div class="fs-12 media-explainer">05 Maret 2019</div>
+                                </p>
+                                <p class="fs-12 ">Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet accusam eos. Vix sale admodum gloriatur </p>
                             </div>
                         </article>
-                        <article class="article article--video d-flex mb-4">
-                            <div class="content-image scale mb-3 flex-120 position-relative mr-3">
+                        <article class="article article--kategori d-flex mb-4">
+                            <div class="content-image scale mb-3 flex-120 position-relative ">
                                 <a href="#">
-                                    <img class="img-fullwidth rounded" src="images/blog_thumb1.png" alt="Image title">
+                                    <img class="img-fullwidth rounded img-kategori" src="images/blog_thumb1.png" alt="Image title">
                                 </a>
                             </div>
                             <div class="content-text">
                                 <a href="#">
                                     <h3 class="content-title content-title--detail-list mb-0">Mengenjot Ekspor Perikanan dan Pertanian</h3>
                                 </a>
-                                <div class="fs-12 media-explainer">05 Maret 2019</div>
-                                <p>Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet accusam eos. Vix sale admodum gloriatur </p>
+                                <p>
+                                    <div class="fs-12 media-explainer">05 Maret 2019</div>
+                                </p>
+                                <p class="fs-12 ">Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet accusam eos. Vix sale admodum gloriatur </p>
                             </div>
                         </article>
-                        <article class="article article--video d-flex mb-4">
-                            <div class="content-image scale mb-3 flex-120 position-relative mr-3">
+                        <article class="article article--kategori d-flex mb-4">
+                            <div class="content-image scale mb-3 flex-120 position-relative ">
                                 <a href="#">
-                                    <img class="img-fullwidth rounded" src="images/blog_thumb1.png" alt="Image title">
+                                    <img class="img-fullwidth rounded img-kategori" src="images/blog_thumb1.png" alt="Image title">
                                 </a>
                             </div>
                             <div class="content-text">
                                 <a href="#">
                                     <h3 class="content-title content-title--detail-list mb-0">Mengenjot Ekspor Perikanan dan Pertanian</h3>
                                 </a>
-                                <div class="fs-12 media-explainer">05 Maret 2019</div>
-                                <p>Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet accusam eos. Vix sale admodum gloriatur </p>
+                                <p>
+                                    <div class="fs-12 media-explainer">05 Maret 2019</div>
+                                </p>
+                                <p class="fs-12 ">Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet accusam eos. Vix sale admodum gloriatur </p>
                             </div>
                         </article>
-                        <a class="lihat-semua-a text-right" href="#">Lihat Semua >></a>
+                        <div class="text-right">
+                            <a class="lihat-semua-a" href="#">Lihat Semua >></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -737,6 +785,7 @@
                 _settings3,
                 _settings4;
 
+
             $('#artikel').slick({
                 infinite: false,
                 slidesToShow: 3,
@@ -778,7 +827,7 @@
                 ]
             });
 
-            $('#artikel .item').matchHeight();
+            // $('.item').matchHeight();
         });
     </script>
 </html>
