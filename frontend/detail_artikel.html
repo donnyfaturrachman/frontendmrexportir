@@ -1,446 +1,783 @@
 <html>
 
-<head>
-    <title>mrexportir</title>
+    <head>
+        <title>mrexportir</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/fonts/slick.eot">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/fonts/slick.ttf">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/fonts/slick.woff">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn1.katadata.co.id/template/backend_template/css/select2.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://cdn1.katadata.co.id/template/backend_template/js/select2.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha256-NXRS8qVcmZ3dOv3LziwznUHPegFhPZ1F/4inU7uC8h0=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="undefined" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js" integrity="sha256-+oeQRyZyY2StGafEsvKyDuEGNzJWAbWqiO2L/ctxF6c=" crossorigin="anonymous"></script>
-    <style>
-        .container-full {
-            width: 100%;
-            margin-right: auto;
-            margin-left: auto;
-            overflow: hidden;
-        }
-        
-        .nopadding {
-            padding: 0px;
-        }
-        
-        .title-detail-article {
-            background-color: #F5F5F5;
-        }
-        
-        .widget-title {
-            padding: 30px 40px;
-            vertical-align: middle;
-            margin-top: 110px;
-        }
-        
-        .widget-title b {
-            background: #C2262D;
-            color: white;
-            padding: 8px 17px;
-            border-radius: 8px;
-        }
-        
-        .widget-title span.name {
-            font-weight: bold;
-            margin-left: 5px;
-            margin-right: 5px;
-        }
-        
-        .footer-right .followSosmed {
-            float: right;
-            margin-bottom: 10px;
-        }
-        
-        body .followSosmed ul,
-        html .followSosmed ul {
-            display: inline-block;
-            vertical-align: middle;
-            padding-top: 15px;
-            padding-left: 0px;
-        }
-        
-        body .followSosmed ul li,
-        html .followSosmed ul li {
-            margin: 0 3px;
-            display: inline-block;
-        }
-        
-        body .followSosmed ul li a[class*=facebook],
-        html .followSosmed ul li a[class*=facebook] {
-            background-color: #425cab;
-        }
-        
-        body .followSosmed ul li a[class*=twitter],
-        html .followSosmed ul li a[class*=twitter] {
-            background-color: #71adf3;
-        }
-        
-        body .followSosmed ul li a[class*=instagram],
-        html .followSosmed ul li a[class*=instagram] {
-            background-color: #e4405f;
-        }
-        
-        body .followSosmed ul li a,
-        html .followSosmed ul li a {
-            display: block;
-            width: 25px;
-            height: 25px;
-            text-align: center;
-            border-radius: 50%;
-            background: salmon;
-        }
-        
-        body .followSosmed ul li a[class*=linkedin],
-        html .followSosmed ul li a[class*=linkedin] {
-            background-color: #33669e;
-        }
-        
-        body .followSosmed ul li a i,
-        html .followSosmed ul li a i {
-            font-size: 15px;
-            line-height: 25px;
-            color: #fff;
-        }
-        
-        body .followSosmed .inline-sosmed,
-        html .followSosmed .inline-sosmed {
-            margin-top: -10px;
-            display: block;
-        }
-        
-        body .followSosmed .inline-sosmed li,
-        html .followSosmed .inline-sosmed li {
-            display: block;
-            margin-bottom: 10px;
-            float: right;
-            clear: both;
-        }
-        
-        .body-article {
-            margin-top: 50px;
-        }
-        
-        .body-article p {
-            line-height: 26px;
-            font-size: 16px;
-        }
-        
-        .body-article hr {
-            margin-top: 0px;
-        }
-        
-        .item-below {
-            margin-top: 40px;
-        }
-        
-        .widget-newsletter {
-            background: #F4F0EB;
-            padding: 40px 90px;
-            box-shadow: 2px 4px 6px 1px rgba(0, 0, 0, 0.2)
-        }
-        
-        input#dimensi {
-            right: 15px;
-        }
-        
-        .input-group-addon:last-child {
-            /* border-left: 0; */
-            border: 1px solid #C2262D;
-            border-radius: 5px;
-        }
-        
-        input#dimensi {
-            right: 15px;
-            border: 1px solid #ddd;
-            border-radius: 0px;
-        }
-        
-        .widget-secondary {
-            padding: 20px 40px;
-            background: #F5F5F5;
-            margin-bottom: 40px;
-            margin-top: 60;
-            box-shadow: 2px 4px 6px 1px rgba(0, 0, 0, 0.2)
-        }
-    </style>
-    <script>
-        $(function() {
-            $('.item').matchHeight({
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/fonts/slick.eot">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/fonts/slick.ttf">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/fonts/slick.woff">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdn1.katadata.co.id/template/backend_template/css/select2.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://cdn1.katadata.co.id/template/backend_template/js/select2.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha256-NXRS8qVcmZ3dOv3LziwznUHPegFhPZ1F/4inU7uC8h0=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="undefined" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js" integrity="sha256-+oeQRyZyY2StGafEsvKyDuEGNzJWAbWqiO2L/ctxF6c=" crossorigin="anonymous"></script>
+        <style>
+            .container-full {
+                width: 100%;
+                margin-right: auto;
+                margin-left: auto;
+                overflow: hidden;
+            }
 
+            .nopadding {
+                padding: 0;
+            }
+
+            .title-detail-article {
+                background-color: #F5F5F5;
+            }
+
+            .widget-title {
+                padding: 0 0 10px;
+                vertical-align: middle;
+                margin-top: 8px;
+            }
+
+            .widget-title h1 {
+                font-weight: 700;
+                font-size: 4rem;
+            }
+            .widget-title b {
+                background: #C2262D;
+                color: white;
+                padding: 8px 17px;
+                border-radius: 8px;
+            }
+
+            .widget-title span.name {
+                font-weight: bold;
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+
+            .footer-right .followSosmed {
+                float: right;
+                margin-bottom: 10px;
+            }
+
+            body .followSosmed ul,
+            html .followSosmed ul {
+                display: inline-block;
+                vertical-align: middle;
+                padding-top: 15px;
+                padding-left: 0;
+            }
+
+            body .followSosmed ul li,
+            html .followSosmed ul li {
+                margin: 0 3px;
+                display: inline-block;
+            }
+
+            body .followSosmed ul li a[class*=facebook],
+            html .followSosmed ul li a[class*=facebook] {
+                background-color: #425cab;
+            }
+
+            body .followSosmed ul li a[class*=twitter],
+            html .followSosmed ul li a[class*=twitter] {
+                background-color: #71adf3;
+            }
+
+            body .followSosmed ul li a[class*=instagram],
+            html .followSosmed ul li a[class*=instagram] {
+                background-color: #e4405f;
+            }
+
+            body .followSosmed ul li a,
+            html .followSosmed ul li a {
+                display: block;
+                width: 25px;
+                height: 25px;
+                text-align: center;
+                border-radius: 50%;
+                background: salmon;
+            }
+
+            body .followSosmed ul li a[class*=linkedin],
+            html .followSosmed ul li a[class*=linkedin] {
+                background-color: #33669e;
+            }
+
+            body .followSosmed ul li a i,
+            html .followSosmed ul li a i {
+                font-size: 15px;
+                line-height: 25px;
+                color: #fff;
+            }
+
+            body .followSosmed .inline-sosmed,
+            html .followSosmed .inline-sosmed {
+                margin-top: -10px;
+                display: block;
+            }
+
+            body .followSosmed .inline-sosmed li,
+            html .followSosmed .inline-sosmed li {
+                display: block;
+                margin-bottom: 10px;
+                float: right;
+                clear: both;
+            }
+
+            .body-article {
+                margin-top: 50px;
+            }
+
+            .body-article p {
+                line-height: 26px;
+                font-size: 16px;
+            }
+
+            .body-article hr {
+                margin-top: 0;
+            }
+
+            .item-below {
+                margin-top: 40px;
+            }
+
+            .widget-newsletter {
+                background: #F4F0EB;
+                padding: 40px 90px;
+                box-shadow: 2px 4px 6px 1px rgba(0, 0, 0, 0.2);
+            }
+
+            input#dimensi {
+                right: 15px;
+            }
+
+            .input-group-addon:last-child {
+                /* border-left: 0; */
+                border: 1px solid #C2262D;
+                border-radius: 5px;
+            }
+
+            input#dimensi {
+                right: 15px;
+                border: 1px solid #ddd;
+                border-radius: 0;
+            }
+
+            .widget-secondary {
+                padding: 20px 40px;
+                background: #F5F5F5;
+                margin-bottom: 40px;
+                margin-top: 60;
+                box-shadow: 2px 4px 6px 1px rgba(0, 0, 0, 0.2);
+            }
+
+            button.btn.btn-cek,
+            button.btn.btn-cek:active,
+            button.btn.btn-cek:hover {
+                background: #B3373D;
+                border: 3px solid #B3373D;
+            }
+
+            .input-group-addon:last-child {
+                border: 1px solid #B3373D;
+            }
+
+            .navbar-form-search {
+                border: 1px solid var(--grey-2,#DEDEDE);
+                border-radius: 4px;
+                padding: 0;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            @media (min-width: 768px) {
+                .navbar-form .form-control {
+                    display: inline-block;
+                    width: 100%;
+                    vertical-align: middle;
+                }
+            }
+
+            @media (min-width: 768px) {
+                .navbar-form .form-control {
+                    display: inline-block;
+                    width: 100%;
+                    vertical-align: middle;
+                }
+            }
+            .navbar-form-search button,
+            .navbar-form-search input {
+                border: none;
+                box-shadow: none;
+            }
+            .flex-grow-1 {
+                flex-grow: 1!important;
+            }
+            .form-control {
+                display: block;
+                width: 100%;
+                height: 34px;
+                padding: 6px 12px;
+                font-size: 14px;
+                line-height: 1.42857143;
+                color: #555;
+                background-color: #fff;
+                background-image: none;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+                box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+                -webkit-transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+                -o-transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+                -webkit-transition: border-color ease-in-out 0.15s,-webkit-box-shadow ease-in-out 0.15s;
+                transition: border-color ease-in-out 0.15s,-webkit-box-shadow ease-in-out 0.15s;
+                transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+                transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s,-webkit-box-shadow ease-in-out 0.15s;
+            }
+
+            button,
+            input,
+            select,
+            textarea {
+                font-family: inherit;
+                font-size: inherit;
+                line-height: inherit;
+            }
+            input {
+                line-height: normal;
+            }
+            button,
+            input,
+            optgroup,
+            select,
+            textarea {
+                color: inherit;
+                font: inherit;
+                margin: 0;
+            }
+            .navbar-form-search button,
+            .navbar-form-search input {
+                border: none;
+                box-shadow: none;
+            }
+            .btn-search {
+                position: absolute;
+                top: 4px;
+                right: 16px;
+                font-size: 22px;
+                background: 0 0;
+                border: none;
+                color: #aaa;
+            }
+            button,
+            input,
+            select,
+            textarea {
+                font-family: inherit;
+                font-size: inherit;
+                line-height: inherit;
+            }
+            button,
+            html input[type=button],
+            input[type=reset],
+            input[type=submit] {
+                -webkit-appearance: button;
+                cursor: pointer;
+            }
+            button,
+            select {
+                text-transform: none;
+            }
+            button {
+                overflow: visible;
+            }
+            button,
+            input,
+            optgroup,
+            select,
+            textarea {
+                color: inherit;
+                font: inherit;
+                margin: 0;
+            }
+            .glyphicon {
+                position: relative;
+                top: 1px;
+                display: inline-block;
+                font-family: "Glyphicons Halflings";
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            .glyphicon-search:before {
+                content: "\e003";
+            }
+            .hidden {
+                display: none!important;
+            }
+            .btn-default {
+                color: #333;
+                background-color: #fff;
+                border-color: #ccc;
+            }
+
+            .mb-4,
+            .my-4 {
+                margin-bottom: 1.5rem!important;
+            }
+            .d-flex {
+                display: flex!important;
+            }
+            article,
+            aside,
+            details,
+            figcaption,
+            figure,
+            footer,
+            header,
+            hgroup,
+            main,
+            menu,
+            nav,
+            section,
+            summary {
+                display: block;
+            }
+            .article--video .content-image {
+                margin-left: 1rem;
+            }
+            .mr-3,
+            .mx-3 {
+                margin-right: 1rem!important;
+            }
+            .mb-3,
+            .my-3 {
+                margin-bottom: 1rem!important;
+            }
+            .flex-120 {
+                flex: 0 0 120px;
+            }
+            .position-relative {
+                position: relative;
+            }
+            .video-playlist .content-image img {
+                margin-top: 10%;
+            }
+            .img-fullwidth {
+                width: 100%;
+                height: auto;
+            }
+            img {
+                vertical-align: middle;
+            }
+            img {
+                border: 0;
+            }
+            h3.content-title.content-title--detail-list.mb-0 {
+                color: #444444;
+                font-weight: 800;
+            }
+            .mb-0,
+            .my-0 {
+                margin-bottom: 0!important;
+            }
+            .content-title {
+                line-height: 1.4;
+            }
+            .content-title--detail-list {
+                font-size: 14px;
+                line-height: 1.2;
+            }
+            .media-explainer {
+                color: #444444;
+            }
+            .fs-12 {
+                font-size: 12px!important;
+            }
+            .ads {
+                margin-top: 10%;
+            }
+.big-hero {
+    background: #111 url(images/pic.png) center center no-repeat fixed;
+    background-size: cover;
+    background-attachment: unset;
+    position: relative;
+    padding: 30px 0;
+    margin-bottom: 0;
+    height: calc(85vh - 120px);
+}
+        </style>
+        <script>
+            $(function () {
+                $('.item').matchHeight({});
             });
-        });
-    </script>
+        </script>
 
-    <body>
-        <nav class="navbar">
-            <div class=" container ">
-                <div class="navbar-header ">
-                    <button type="button " class="navbar-toggle collapsed " data-toggle="collapse " data-target="#navbar " aria-expanded="false " aria-controls="navbar ">
-                  <span class="sr-only ">Mr Exportir</span>
-                  <span class="icon-bar "></span>
-                  <span class="icon-bar "></span>
-                  <span class="icon-bar "></span>
-                </button>
-                    <a class="navbar-brand " href="# ">
-                        <img src="images/redlogo.png " class="img-responsive logo-top ">
-                    </a>
-                </div>
-                <div id="navbar " class="navbar-collapse collapse ">
+        <body>
+            <nav class="navbar">
+                <div class=" container ">
+                    <div class="navbar-header ">
+                        <button type="button " class="navbar-toggle collapsed " data-toggle="collapse " data-target="#navbar " aria-expanded="false " aria-controls="navbar ">
+                            <span class="sr-only ">Mr Exportir</span>
+                            <span class="icon-bar "></span>
+                            <span class="icon-bar "></span>
+                            <span class="icon-bar "></span>
+                        </button>
+                        <a class="navbar-brand " href="# ">
+                            <img src="images/logo_new.png " class="img-responsive logo-top ">
+                        </a>
+                    </div>
+                    <div id="navbar " class="navbar-collapse collapse ">
 
-                    <ul class="nav navbar-nav navbar-right ">
-                        <li><a href="#">Layanan</a></li>
-                        <li><a href="#">Panduan Expor</a></li>
-                        <li><a href="#">ExportKu</a></li>
-                        <li><a href="#">Lacak Kiriman</a></li>
-                        <li class="btn-login"><a href="#">Masuk</a></li>
-                    </ul>
+                        <ul class="nav navbar-nav navbar-right ">
+                            <li>
+                                <a href="#">Layanan</a>
+                            </li>
+                            <li>
+                                <a href="#">Panduan Expor</a>
+                            </li>
+                            <li>
+                                <a href="#">XportKu</a>
+                            </li>
+                            <li>
+                                <a href="#">Cek Harga</a>
+                            </li>
+                            <li class="btn-login">
+                                <a href="#">Masuk</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
                 </div>
-                <!--/.nav-collapse -->
+                <!--/.container-fluid -->
+            </nav>
+
+            <div class="container-full">
+                <div class="row">
+                    <div class="col-md-12 nopadding item big-hero">
+                    </div>
+                </div>
             </div>
-            <!--/.container-fluid -->
-        </nav>
-        <div class="container-full">
-            <div class="row">
-                <div class="col-md-6 nopadding item">
-                    <img src="images/pic.png" class="img-responsive" />
-                </div>
-                <div class="col-md-6 title-detail-article nopadding item">
-                    <div class="widget-title">
-                        <b>Kategori 1</b>
-                        <h3>Jasa Ekspor Kacang Mede</h3>
-                        <span class="by">Oleh:</span>
-                        <span class="name">Mister Exportir</span>
-                        <span class="date">05 Maret 2019</span>
-                        <div class="followSosmed">
-                            <ul>
+            <div class="body-article">
+                <div class="container">
+                    <div class="col-md-1 nopadding">
+                        <div class="followSosmed ">
+                            <ul class="inline-sosmed">
                                 <li>
-                                    <a class="facebook" href="#" rel="nofollow"><i class="fa fa-facebook"></i></a>
+                                    <a class="facebook" href="#" rel="nofollow">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a class="twitter" href="#" rel="nofollow"><i class="fa fa-twitter"></i></a>
+                                    <a class="twitter" href="#" rel="nofollow">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a class="instagram" href="#" rel="nofollow"><i class="fa fa-instagram"></i></a>
+                                    <a class="instagram" href="#" rel="nofollow">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a class="linkedin" href="#" rel="nofollow"><i class="fa fa-linkedin"></i></a>
+                                    <a class="linkedin" href="#" rel="nofollow">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
                                 </li>
 
                             </ul>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="body-article">
-            <div class="container">
-                <div class="col-md-1 nopadding">
-                    <div class="followSosmed ">
-                        <ul class="inline-sosmed">
-                            <li>
-                                <a class="facebook" href="#" rel="nofollow"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a class="twitter" href="#" rel="nofollow"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a class="instagram" href="#" rel="nofollow"><i class="fa fa-instagram"></i></a>
-                            </li>
-                            <li>
-                                <a class="linkedin" href="#" rel="nofollow"><i class="fa fa-linkedin"></i></a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-7">
-                    <p>Mede gelondongan dari Indonesia sangat diterima dengan baik di pasar internasional khususnya di negara Vietnam, India, Pantai Gading, Filipina, Tanzania, Guinea Bissau, Bennin, Mozambik, dan Brasil, namun saat ini pemeritah mengeluarkan
+                    <div class="col-md-7">
+                        <div class="widget-title">
+                            <b>Kategori 1</b>
+                            <h1>Jasa Ekspor Kacang Mede</h1>
+                            <span class="by">Oleh:</span>
+                            <span class="name">Mister Exportir</span>
+                            <span class="date">05 Maret 2019</span>
+                        </div>
+                        <p>Mede gelondongan dari Indonesia sangat diterima dengan baik di pasar internasional khususnya di negara Vietnam, India, Pantai Gading, Filipina, Tanzania, Guinea Bissau, Bennin, Mozambik, dan Brasil, namun saat ini pemeritah mengeluarkan
                         larangan akan pengeksporan kacanng mede dalam bentuk gelondongan hal ini di berlakukan demi meningkatnya ekonomi petani kacang mede.
 
                     </p>
-                    <p>Pemerintah Indonesia menyarankan agar kacang mede gelondongan ini di tambahkan nilai nya saat hendak di ekspor, karena harga dari kacang mede tersebut akan melonjak sampai 20%-80% ketika sudah diolah menjadi produk jadi atau setengah
+                        <p>Pemerintah Indonesia menyarankan agar kacang mede gelondongan ini di tambahkan nilai nya saat hendak di ekspor, karena harga dari kacang mede tersebut akan melonjak sampai 20%-80% ketika sudah diolah menjadi produk jadi atau setengah
                         jadi, contohnya seperti produk (Cashew Nut Shell Liquid/CNSL) atau minyak kulit kacang mede yang hargaya 20 kali lipat dari harga kacang mede gelondongan.
 
 
                     </p>
-                    <img src="images/pic.png " class="img-responsive ">
-                    <br/>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="images/pic.png " class="img-responsive ">
+                        <img src="images/pic.png " class="img-responsive ">
+                        <br/>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="images/pic.png " class="img-responsive ">
+                            </div>
+                            <div class="col-md-6">
+                                <img src="images/pic.png " class="img-responsive ">
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <img src="images/pic.png " class="img-responsive ">
-                        </div>
-                    </div>
-                    <br/>
-                    <h5>SEKILAS TENTANG KACANG MEDE</h5>
-                    <hr/>
-                    <p>Kacang mede berasal dari buah jambu monyet atau biasa disebut dengan jambu mede. Pohon jambu mede merupakan tanaman asli dari Hutan Amazon. Saat ini, pohonnya sudah tersebar di seluruh dunia yang dibawa oleh penjelajah Portugis. Tanaman
+                        <br/>
+                        <h5>SEKILAS TENTANG KACANG MEDE</h5>
+                        <hr/>
+                        <p>Kacang mede berasal dari buah jambu monyet atau biasa disebut dengan jambu mede. Pohon jambu mede merupakan tanaman asli dari Hutan Amazon. Saat ini, pohonnya sudah tersebar di seluruh dunia yang dibawa oleh penjelajah Portugis. Tanaman
                         mede sudah dibudidayakan secara komersial di Brasil, Vietnam, India, dan negara-negara Afrika. Di Indonesia, tanaman ini banyak tumbuh di daerah Wonogiri, Jawa Tengah. Jambu mede memiliki nama ilmiah Anacardium occidentale. Buah
                         jambu mede atau jambu monyet ini berwarna abu-abu yang tampak seperti lonceng. Jambu mete berukuran panjang sekitar satu inci dengan ujungnya berbentuk kacang yang runcing melengkung.
 
 
                     </p>
-                    <p>Hampir semua bagian dari tanaman mede dapat dimanfaatkan. Misalnya saja, biji dari jambu mede ini, yaitu kacang mede bisa digunakan sebagai bahan campuran makanan, seperti cokelat, kue, dan sebagai camilan. Daun muda dari pohon ini
+                        <p>Hampir semua bagian dari tanaman mede dapat dimanfaatkan. Misalnya saja, biji dari jambu mede ini, yaitu kacang mede bisa digunakan sebagai bahan campuran makanan, seperti cokelat, kue, dan sebagai camilan. Daun muda dari pohon ini
                         bisa dijadikan sebagai lalapan, serta kulit batang pohonnya dapat digunakan sebagai obat sariawan. </p>
-                    <p>Terkait buahnya, jambu monyet ini di bagi menjadi dua, yaitu buah semu dan buah sejati. Biji mede yang berbentuk seperti ginjal yang berwarna cokelat tua atau kehitaman merupakan buah sejati. Sementara, buah semu pada jambu mede awalnya
+                        <p>Terkait buahnya, jambu monyet ini di bagi menjadi dua, yaitu buah semu dan buah sejati. Biji mede yang berbentuk seperti ginjal yang berwarna cokelat tua atau kehitaman merupakan buah sejati. Sementara, buah semu pada jambu mede awalnya
                         akan berwarna kuning dan perlahan berubah menjadi warna oranye hingga merah. Buah semu dari jambu monyet atau jambu mede juga bisa dimakan. Kacang mede kaya akan nutrisi seperti vitamin B1, B2, B3, B5, B6, B9, dan C. Selain itu,
                         kacang mede tinggi kalori. Setiap100 gram kacang menyediakan 553 kalori. Kandungan lainnya, yaitu serat larut, vitamin, dan mineral. </p>
-                    <hr/>
-                    <p>Hampir semua bagian dari tanaman mede dapat dimanfaatkan. Misalnya saja, biji dari jambu mede ini, yaitu kacang mede bisa digunakan sebagai bahan campuran makanan, seperti cokelat, kue, dan sebagai camilan. Daun muda dari pohon ini
+                        <hr/>
+                        <p>Hampir semua bagian dari tanaman mede dapat dimanfaatkan. Misalnya saja, biji dari jambu mede ini, yaitu kacang mede bisa digunakan sebagai bahan campuran makanan, seperti cokelat, kue, dan sebagai camilan. Daun muda dari pohon ini
                         bisa dijadikan sebagai lalapan, serta kulit batang pohonnya dapat digunakan sebagai obat sariawan. </p>
-                    <h5>NEGARA TUJUAN EKSPOR KACANG MEDE</h5>
+                        <h5>NEGARA TUJUAN EKSPOR KACANG MEDE</h5>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="images/pic.png " class="img-responsive ">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="images/pic.png " class="img-responsive ">
+                            </div>
+                            <div class="col-md-6">
+                                <img src="images/pic.png " class="img-responsive ">
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <img src="images/pic.png " class="img-responsive ">
-                        </div>
-                    </div>
-                    <p>Untuk kawan eksportir yang berbisnis kacang mede, berikut adalah referensi negara tujuan ekspor untuk kacang mede </p>
-                    <b>1. Vietnam</b>
-                    <p>Vietnam adalah negara yang berlokasi di Asia Tenggara dengan iklim tropis yang mendukung bertumbuhnya segala produk pertanian, negara Vietnam ini menjadi negara dengan tujuan ekspor kacang mede dari Indonesia. Menurrut data trademap.org
+                        <p>Untuk kawan eksportir yang berbisnis kacang mede, berikut adalah referensi negara tujuan ekspor untuk kacang mede </p>
+                        <b>1. Vietnam</b>
+                        <p>Vietnam adalah negara yang berlokasi di Asia Tenggara dengan iklim tropis yang mendukung bertumbuhnya segala produk pertanian, negara Vietnam ini menjadi negara dengan tujuan ekspor kacang mede dari Indonesia. Menurrut data trademap.org
                         Vietnam mengimpor kacang mede dari Indonesia sebanyak 50.800 ton pada tahun 2018.</p>
-                    <b>2. India</b>
-                    <p>India adalah negara yang menjadi tujuan ekspor kacang mede indonesia kedua setelah Vietnam dengan total impor 41.229 ton untuk komoditi kacang mede. Hal ini dikarenakan kacang mede menjadi komditas yang diminati msyarak india sebagai
+                        <b>2. India</b>
+                        <p>India adalah negara yang menjadi tujuan ekspor kacang mede indonesia kedua setelah Vietnam dengan total impor 41.229 ton untuk komoditi kacang mede. Hal ini dikarenakan kacang mede menjadi komditas yang diminati msyarak india sebagai
                         kebutuhan konsumsi atau sebagai kebutuhan kebudayaan masyarakat india.</p>
-                    <b>3. Sri Lanka</b>
-                    <p>Sri Lanka adalah negara yang berada di wilayah asia selatan denngan iklim sebagian tropis dan sebagian subtopis, negara Sri Lanka menjadi negara pengimpor kacang mede paling banyak ke tiga dari Indonesia yaiitu sebanyak 7.846 ton yang
+                        <b>3. Sri Lanka</b>
+                        <p>Sri Lanka adalah negara yang berada di wilayah asia selatan denngan iklim sebagian tropis dan sebagian subtopis, negara Sri Lanka menjadi negara pengimpor kacang mede paling banyak ke tiga dari Indonesia yaiitu sebanyak 7.846 ton yang
                         dilansir oleh trademap.org pada tahun 2018</p>
-                    <b>4. Cambodia</b>
-                    <p>Camodia adalah negara anggota ASEAN yang ada di Asia Tenggara, Cambodia menjadi negara pengimpor kacang mede dari Indonesia dengan total impor yang tercatat oleh trademap.org 1.464 ton kacang mede pada tahun 2018.</p>
-                    <p>Pada umumnya kacang mede yang kita ekspor ke 4 negara terebut adalah kacang mede glonndongan yang belum di proses apapun , lalu kembali ekspor ke negara lainya menjadi barang jadi yang harganya berkali kali lipat.</p>
-                    <p>Badan usaha di perlukan untuk dapat membuat lisensi ekspor, dalam regulasi Indonesia lisensi di perlukan sebagai gerbang utama untuk mendapat rekomendasi rekomendasi dari berbagai kementrian, karena proses ekspor membtuhkan berbagai
+                        <b>4. Cambodia</b>
+                        <p>Camodia adalah negara anggota ASEAN yang ada di Asia Tenggara, Cambodia menjadi negara pengimpor kacang mede dari Indonesia dengan total impor yang tercatat oleh trademap.org 1.464 ton kacang mede pada tahun 2018.</p>
+                        <p>Pada umumnya kacang mede yang kita ekspor ke 4 negara terebut adalah kacang mede glonndongan yang belum di proses apapun , lalu kembali ekspor ke negara lainya menjadi barang jadi yang harganya berkali kali lipat.</p>
+                        <p>Badan usaha di perlukan untuk dapat membuat lisensi ekspor, dalam regulasi Indonesia lisensi di perlukan sebagai gerbang utama untuk mendapat rekomendasi rekomendasi dari berbagai kementrian, karena proses ekspor membtuhkan berbagai
                         rekomendasi kementrian khususnya kacang mede sebagai produk pertanian.</p>
-                    <div class="widget-secondary">
-                        <h3>JASA EKSPOR KACANG MEDE</h3>
-                        <br/>
+                        <div class="widget-secondary">
+                            <h3>JASA EKSPOR KACANG MEDE</h3>
+                            <br/>
 
-                        <p>Bagi kawan eksportir yang hendak mengekspor kacang mede ke kancah internasional namun belum dapat memenuhi persyaratan yang di tetapkan pemerintah, jangan khawatir kami dapat membantu agar pengeksporan tetap berjalan lancar dengan
+                            <p>Bagi kawan eksportir yang hendak mengekspor kacang mede ke kancah internasional namun belum dapat memenuhi persyaratan yang di tetapkan pemerintah, jangan khawatir kami dapat membantu agar pengeksporan tetap berjalan lancar dengan
                             menggunakan lisensi kami yatu MISTER EXPORTIR, selain itu, kami juga dapat membantu anda yang telah memiliki buyer di luar negeri namun belum memiliki supplier kacang mede, kami menjual juga kacang mede dengn kualitas ekspor
                             dengan jenis W320,.</p>
+                            <br/>
+                            <p>Bagi kawan eksportir yang penasaran dan membutuhkan informasi lebih lanjut dapat menghubungi kontak MISTER EXPORTIR di Whatsapp 0895 3434 04471 </p>
+
+                        </div>
+                        <div class="widget-newsletter">
+                            <div class="input-group">
+                                <input id="dimensi" type="text" class="form-control" name="noresi" placeholder="Masukan Email Anda...">
+                                <span class="input-group-addon group-addon-resi">
+                                    <button  class="btn btn-cek">
+                                        <b>Berlangganan</b>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <h3>Artikel Terkait</h3>
+                        <hr/>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="images/pic.png " class="img-responsive ">
+                                <h4>Jasa Ekspor Kacang Mede</h4>
+                                <P>05 Maret 2019</P>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="images/pic.png " class="img-responsive ">
+                                <h4>Jasa Ekspor Kacang Mede</h4>
+                                <P>05 Maret 2019</P>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="images/pic.png " class="img-responsive ">
+                                <h4>Jasa Ekspor Kacang Mede</h4>
+                                <P>05 Maret 2019</P>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="images/pic.png " class="img-responsive ">
+                                <h4>Jasa Ekspor Kacang Mede</h4>
+                                <P>05 Maret 2019</P>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="search-wrapper">
+                            <div class="search-container">
+                                <form class="navbar-form navbar-form-search form-inline d-flex" role="search" name="searchform" method="post" action="" onsubmit="doSearch();return false;">
+                                    <input type="text" class="form-control search-input flex-grow-1" id="inputSearch" value="" placeholder="Search">
+                                    <button type="submit" class="btn-search" id="search-button">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </form>
+                                <button type="button" class="btn btn-default close-icon hidden" id="search-close">
+                                    <i class="glyphicon glyphicon-remove"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <h3>Artikel Terbaru</h3>
+                        <hr/>
+                        <div class="video-playlist custom-scrollbar">
+                            <article class="article article--video d-flex mb-4">
+                                <div class="content-image scale mb-3 flex-120 position-relative mr-3">
+                                    <a href="#">
+                                        <img class="img-fullwidth rounded" src="images/blog_thumb1.png" alt="Image title">
+                                    </a>
+                                </div>
+                                <div class="content-text">
+                                    <a href="#">
+                                        <h3 class="content-title content-title--detail-list mb-0">Mengenjot Ekspor Perikanan dan Pertanian</h3>
+                                    </a>
+                                    <div class="fs-12 media-explainer">05 Maret 2019</div>
+                                </div>
+                            </article>
+                            <article class="article article--video d-flex mb-4">
+                                <div class="content-image scale mb-3 flex-120 position-relative mr-3">
+                                    <a href="#">
+                                        <img class="img-fullwidth rounded" src="images/blog_thumb1.png" alt="Image title">
+                                    </a>
+                                </div>
+                                <div class="content-text">
+                                    <a href="#">
+                                        <h3 class="content-title content-title--detail-list mb-0">Mengenjot Ekspor Perikanan dan Pertanian</h3>
+                                    </a>
+                                    <div class="fs-12 media-explainer">05 Maret 2019</div>
+                                </div>
+                            </article>
+                            <article class="article article--video d-flex mb-4">
+                                <div class="content-image scale mb-3 flex-120 position-relative mr-3">
+                                    <a href="#">
+                                        <img class="img-fullwidth rounded" src="images/blog_thumb1.png" alt="Image title">
+                                    </a>
+                                </div>
+                                <div class="content-text">
+                                    <a href="#">
+                                        <h3 class="content-title content-title--detail-list mb-0">Mengenjot Ekspor Perikanan dan Pertanian</h3>
+                                    </a>
+                                    <div class="fs-12 media-explainer">05 Maret 2019</div>
+                                </div>
+                            </article>
+                            <article class="article article--video d-flex mb-4">
+                                <div class="content-image scale mb-3 flex-120 position-relative mr-3">
+                                    <a href="#">
+                                        <img class="img-fullwidth rounded" src="images/blog_thumb1.png" alt="Image title">
+                                    </a>
+                                </div>
+                                <div class="content-text">
+                                    <a href="#">
+                                        <h3 class="content-title content-title--detail-list mb-0">Mengenjot Ekspor Perikanan dan Pertanian</h3>
+                                    </a>
+                                    <div class="fs-12 media-explainer">05 Maret 2019</div>
+                                </div>
+                            </article>
+                        </div>
+                        <h3>Video Terbaru</h3>
+                        <hr/>
+                        <div>
+                            <a href="#">
+                                <img class="img-fullwidth rounded" src="images/pic.png" alt="Image title">
+                            </a>
+                            <div class="content-text">
+                                <a href="#">
+                                    <h3 class="content-title content-title--detail-list mb-0">Mengenjot Ekspor Perikanan dan Pertanian</h3>
+                                </a>
+                                <div class="fs-12 media-explainer">05 Maret 2019</div>
+                            </div>
+                        </div>
+                        <div class="ads">
+                            <img class="img-fullwidth rounded" src="images/pic.png" alt="Image title">
+                        </div>
+                        <div class="ads">
+                            <img class="img-fullwidth rounded" src="images/pic.png" alt="Image title">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br/>
+            <br/>
+            <footer>
+                <div class="container ">
+                    <div class="row ">
                         <br/>
-                        <p>Bagi kawan eksportir yang penasaran dan membutuhkan informasi lebih lanjut dapat menghubungi kontak MISTER EXPORTIR di Whatsapp 0895 3434 04471 </p>
-
-                    </div>
-                    <div class="widget-newsletter">
-                        <div class="input-group">
-                            <input id="dimensi" type="text" class="form-control" name="noresi" placeholder="Masukan Email Anda...">
-                            <span class="input-group-addon group-addon-resi">  <button  class="btn btn-cek"><b>Berlangganan</b></button></span>
-                        </div>
-                    </div>
-                    <div class="item-below">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="images/pic.png " class="img-responsive ">
+                        <div class="col-md-12 ">
+                            <div class="row">
+                                <div class="col-md-3 ">
+                                    <img src="images/footer.png " class="img-responsive logo-bottom">
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <h4>Jasa Ekspor Kacang Mede</h4>
-                                <P>05 Maret 2019</P>
+                            <br/>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-footer ">
+                                        <li>Tentang Xportir</li>
+                                        <li>Bantuan</li>
+                                        <li>Blog</li>
+                                        <li>Karir</li>
+                                    </ul>
+                                    <ul class="list-footer ">
+                                        <li>Kebijakan Privasi</li>
+                                        <li>Syarat & Ketentuan</li>
+                                        <li>Sitemap</li>
+                                    </ul>
+
+                                </div>
+                                <div class="col-md-2 pull-right">
+                                    <img src="images/playstore.png " class="img-responsive playstore"/>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                            <hr class="border-footer"/>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="copyrighted">© 2020 PT. Triton Nusantara Tangguh</p>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <ul class="social ">
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-facebook-f "></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-twitter "></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-instagram "></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-youtube-play "></i>
+                                            </a>
+                                        </li>
 
-                    <div class="item-below">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="images/pic.png " class="img-responsive ">
+                                    </ul>
+
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <h4>Jasa Ekspor Kacang Mede</h4>
-                                <P>05 Maret 2019</P>
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-                <div class="col-md-4">
-                    <h3>Artikel terpopuler</h3>
-                    <hr/>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="images/pic.png " class="img-responsive ">
-                            <h4>Jasa Ekspor Kacang Mede</h4>
-                            <P>05 Maret 2019</P>
                         </div>
-                        <div class="col-md-6">
-                            <img src="images/pic.png " class="img-responsive ">
-                            <h4>Jasa Ekspor Kacang Mede</h4>
-                            <P>05 Maret 2019</P>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="images/pic.png " class="img-responsive ">
-                            <h4>Jasa Ekspor Kacang Mede</h4>
-                            <P>05 Maret 2019</P>
-                        </div>
-                        <div class="col-md-6">
-                            <img src="images/pic.png " class="img-responsive ">
-                            <h4>Jasa Ekspor Kacang Mede</h4>
-                            <P>05 Maret 2019</P>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-
-        <br/>
-        <br/>
-        <footer>
-            <div class="container ">
-                <div class="row ">
-                    <div class="col-md-2 ">
-                        <img src="images/whitelogo.png " class="img-responsive " />
-                    </div>
-                    <div class="col-md-6 ">
-                        <ul class="list-footer ">
-                            <li>ExportKu</li>
-                            <li>ExportKu</li>
-                            <li>ExportKu</li>
-                        </ul>
-                        <ul class="list-footer ">
-                            <li>ExportKu</li>
-                            <li>ExportKu</li>
-                            <li>ExportKu</li>
-                        </ul>
-                        <ul class="list-footer ">
-                            <li>ExportKu</li>
-                            <li>ExportKu</li>
-                            <li>ExportKu</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 ">
-                        <h4>Kontak Kami</h4>
-                        <p>Alamat : 123 Main Street, St. NW Ste, 1 Washington, DC,USA.</p>
-                        <p>Phone : +56 (0) 012 345 6789 cobusiness@example.com
-                        </p>
-                        <ul class="social ">
-                            <li><i class="fa fa-facebook-f "></i></li>
-                            <li><i class="fa fa-twitter "></i></li>
-                            <li><i class="fa fa-instagram "></i></li>
-                            <li><i class="fa fa-linkedin "></i></li>
-                            <li><i class="fa fa-pinterest-p "></i></li>
-                        </ul>
                     </div>
                 </div>
-            </div>
-        </footer>
-        <!-- Latest compiled and minified JavaScript -->
+            </footer>
+            <!-- Latest compiled and minified JavaScript -->
 
-    </body>
+        </body>
 
-</html>
+    </html>

@@ -19,8 +19,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="undefined" crossorigin="anonymous"/>
         <link rel="stylesheet" href="css/style.css">
 
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
     </head>
     <style>
@@ -222,10 +220,8 @@
         }
         .content-text-slider {
             background-color: #F5F5F5;
-            padding-top: 1px;
-            padding-left: 15px;
-            padding-right: 15px;
-            padding-bottom: 15px;
+            padding: 1px 15px 15px;
+            box-shadow: 2px 4px 6px 1px rgba(0, 0, 0, 0.2);
         }
         .content-text-slider h2 {
             font-size: 2rem;
@@ -233,6 +229,7 @@
         }
         .slide-wrapper {
             position: relative;
+            height: fit-content;
         }
         .slick-disabled .fa.fa-angle-left {
             color: #F2F2F2;
@@ -258,6 +255,7 @@
         .slider .item {
             position: relative;
             overflow: hidden;
+            box-shadow: 2px 4px 6px 1px rgba(0, 0, 0, 0.2);
         }
         .slider .item a.title {
             font-family: frank-new, sans-serif !important;
@@ -277,8 +275,8 @@
         }
         .article--kategori .content-text {
             background-color: #F5F5F5;
-            padding: 10px;
-            padding-bottom: 0px;
+            padding: 10px 10px 0;
+            box-shadow: 2px 4px 6px 1px rgba(0, 0, 0, 0.2);
         }
         .article--kategori .content-text .content-title {
             margin-top: unset;
@@ -289,17 +287,24 @@
         .section-kategori {
             margin-bottom: 5rem;
         }
-.slider .item a:not([class*="title"]) img {
-    display: block;
-    width: 100%;
-}
-.slider .item a:not([class*="title"]) {
-    display: block;
-}
-.slick-list, .slick-slider {
-    position: relative;
-    display: block;
-}
+        .slider .item a:not([class*="title"]) img {
+            display: block;
+            width: 100%;
+        }
+        .slider .item a:not([class*="title"]) {
+            display: block;
+        }
+        .slick-list,
+        .slick-slider {
+            position: relative;
+            display: block;
+        }
+        .text-right.section-artikel-terbaru {
+            margin-top: 5%;
+        }
+        .div-lihat-semua-a {
+            padding: 10px;
+        }
     </style>
 
     <body>
@@ -490,7 +495,7 @@
                         </div>
                         <div class="d-flex justify-content-between mb-3">
                             <div class="fs-12"></div>
-                            <div>
+                            <div class="div-lihat-semua-a">
                                 <a class="lihat-semua-a" href="#">Lihat Semua >></a>
                             </div>
                         </div>
@@ -572,7 +577,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-right">
+                <div class="text-right section-artikel-terbaru">
                     <a class="lihat-semua-a" href="#">Lihat Semua >></a>
                 </div>
             </div>
@@ -785,7 +790,6 @@
                 _settings3,
                 _settings4;
 
-
             $('#artikel').slick({
                 infinite: false,
                 slidesToShow: 3,
@@ -827,7 +831,7 @@
                 ]
             });
 
-            // $('.item').matchHeight();
+            $('#artikel .item').matchHeight();
         });
     </script>
 </html>
