@@ -1,431 +1,739 @@
 <html>
 
-<head>
-    <title>mrexportir</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/fonts/slick.eot">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/fonts/slick.ttf">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/fonts/slick.woff">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn1.katadata.co.id/template/backend_template/css/select2.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://cdn1.katadata.co.id/template/backend_template/js/select2.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha256-NXRS8qVcmZ3dOv3LziwznUHPegFhPZ1F/4inU7uC8h0=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="undefined" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/style.css">
-    <script>
-        $(document).ready(function() {
-            $("#id_daerah").select2({
-                placeholder: "Kota Tujuan",
-                initSelection: function(element, callback) {
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>mrexportir</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/fonts/slick.eot">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/fonts/slick.ttf">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/fonts/slick.woff">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdn1.katadata.co.id/template/backend_template/css/select2.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://cdn1.katadata.co.id/template/backend_template/js/select2.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha256-NXRS8qVcmZ3dOv3LziwznUHPegFhPZ1F/4inU7uC8h0=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="undefined" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="css/style.css">
+        <script>
+            $(document).ready(function () {
+                $("#id_daerah")
+                    .select2({
+                        placeholder: "Kota Tujuan",
+                        initSelection: function (element, callback) {},
+                        minimumInputLength: 2,
+                        ajax: {
+                            url: 'http://18.141.205.174/api/listkotanegara',
+                            dataType: 'json',
+                            data: function (term, page) {
+                                return {q: term};
+                            },
+                            results: function (data, page) {
 
-                },
-                minimumInputLength: 2,
-                ajax: {
-                    url: 'http://18.141.205.174/api/listkotanegara',
-                    dataType: 'json',
-                    data: function(term, page) {
-                        return {
-                            q: term
-                        };
-                    },
-                    results: function(data, page) {
-
-                        return {
-                            results: data[0].data
-                        };
-                    },
-                    cache: false
-                },
-            }).on("change", function(e) {
-                $('#daerah_text').val($('.select2-chosen').text());
-
-            });
-            $("#cekongkir").click(function() {
-                $.ajax({
-                    type: "post",
-                    url: "http://18.141.205.174/api/cekongkir",
-                    data: JSON.stringify({
-                        "panjang": $("#panjang").val(),
-                        "lebar": $("#lebar").val(),
-                        "tinggi": $("#tinggi").val(),
-                        "destination": $("#id_daerah").val(),
-                        "tipe_pengiriman": $('#tipe_pengiriman').find(":selected").val(),
-                        "dimensi": $("#dimensi").val()
-                    }),
-                    contentType: "application/json",
-                    dataType: "json",
-                    success: function(data) {
-                        console.log(data)
-                        $("#status").show()
-                        $(".widget-price").show()
-                        $("#volume").text(data.paket.volume)
-                        $("#berat").text(data.paket.weight)
-                        var tipe = $('#tipe_pengiriman').find(":selected").val()
-                        if (tipe == 1) {
-                            $(".tipe_delivery").text("Air Freight")
-                            $(".icon-new").attr("src", "images/plane.png");
-                        } else {
-                            $(".tipe_delivery").text("Sea Freight")
-                            $(".icon-new").attr("src", "images/ship.png");
+                                return {results: data[0].data};
+                            },
+                            cache: false
                         }
-                        $(".dtd").text(convertToRupiah(data.paket.door_to_door))
-                        $(".dtp").text(convertToRupiah(data.paket.door_to_port))
+                    })
+                    .on("change", function (e) {
+                        $('#daerah_text').val($('.select2-chosen').text());
 
-                    },
-                    error: function(data) {
-                        console.log(data)
-                    }
+                    });
+                $("#cekongkir").click(function () {
+                    $.ajax({
+                        type: "post",
+                        url: "http://18.141.205.174/api/cekongkir",
+                        data: JSON.stringify({
+                            "panjang": $("#panjang").val(),
+                            "lebar": $("#lebar").val(),
+                            "tinggi": $("#tinggi").val(),
+                            "destination": $("#id_daerah").val(),
+                            "tipe_pengiriman": $('#tipe_pengiriman')
+                                .find(":selected")
+                                .val(),
+                            "dimensi": $("#dimensi").val()
+                        }),
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (data) {
+                            console.log(data)
+                            $("#status").show()
+                            $(".widget-price").show()
+                            $("#volume").text(data.paket.volume)
+                            $("#berat").text(data.paket.weight)
+                            var tipe = $('#tipe_pengiriman')
+                                .find(":selected")
+                                .val()
+                            if (tipe == 1) {
+                                $(".tipe_delivery").text("Air Freight")
+                                $(".icon-new").attr("src", "images/plane.png");
+                            } else {
+                                $(".tipe_delivery").text("Sea Freight")
+                                $(".icon-new").attr("src", "images/ship.png");
+                            }
+                            $(".dtd").text(convertToRupiah(data.paket.door_to_door))
+                            $(".dtp").text(convertToRupiah(data.paket.door_to_port))
+
+                        },
+                        error: function (data) {
+                            console.log(data)
+                        }
+                    });
                 });
             });
-        });
 
-        function convertToRupiah(angka) {
-            var rupiah = '';
-            var angkarev = angka.toString().split('').reverse().join('');
-            for (var i = 0; i < angkarev.length; i++)
-                if (i % 3 == 0) rupiah += angkarev.substr(i, 3) + '.';
-            return 'Rp. ' + rupiah.split('', rupiah.length - 1).reverse().join('');
-        }
-    </script>
-    <script>
-        var clicked = false
-        $(document).ready(function() {
-            $('.single-item').slick({
-                slidesToShow: 1,
-                dots: true
-            });
-            $(".nav-tabs a").click(function() {
-                $("#status").hide()
-                $(".widget-price").hide()
+            function convertToRupiah(angka) {
+                var rupiah = '';
+                var angkarev = angka
+                    .toString()
+                    .split('')
+                    .reverse()
+                    .join('');
+                for (var i = 0; i < angkarev.length; i++) 
+                    if (i % 3 == 0) 
+                        rupiah += angkarev.substr(i, 3) + '.';
+            return 'Rp. ' + rupiah
+                    .split('', rupiah.length - 1)
+                    .reverse()
+                    .join('');
+            }
+        </script>
+        <script>
+            var clicked = false
+            $(document).ready(function () {
+                $('.single-item').slick({slidesToShow: 1, dots: true});
+                $(".nav-tabs a").click(function () {
+                    $("#status").hide()
+                    $(".widget-price").hide()
+                })
+                $(".btn-panel").click(function (event) {
+                    event.preventDefault();
+                    $(".panel-table").slideToggle("slow");
+                    if (clicked == false) {
+                        $(".text").text(" Sembunyikan Rincian")
+                        $("i.fa.fa-chevron-down").hide()
+                        $("i.fa.fa-chevron-up").show()
+                        clicked = true
+                    } else {
+                        $(".text").text(" Lihat Rincian")
+                        $("i.fa.fa-chevron-down").show()
+                        $("i.fa.fa-chevron-up").hide()
+                        clicked = false
+                    }
+                });
             })
-            $(".btn-panel").click(function(event) {
-                event.preventDefault();
-                $(".panel-table").slideToggle("slow");
-                if (clicked == false) {
-                    $(".text").text(" Sembunyikan Rincian")
-                    $("i.fa.fa-chevron-down").hide()
-                    $("i.fa.fa-chevron-up").show()
-                    clicked = true
+            function _defineProperty(obj, key, value) {
+                if (key in obj) {
+                    Object.defineProperty(obj, key, {
+                        value: value,
+                        enumerable: true,
+                        configurable: true,
+                        writable: true
+                    });
                 } else {
-                    $(".text").text(" Lihat Rincian")
-                    $("i.fa.fa-chevron-down").show()
-                    $("i.fa.fa-chevron-up").hide()
-                    clicked = false
+                    obj[key] = value;
                 }
+                return obj;
+            }
+            $(function () {
+                var _settings,
+                    _settings2,
+                    _settings3,
+                    _settings4;
+
+                $('#artikel').slick({
+                    infinite: false,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplaySpeed: 2500,
+                    speed: 2000,
+                    autoplay: false,
+                    prevArrow: '#prevArtikel',
+                    nextArrow: '#nextArtikel',
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: (_settings = {
+                                infinite: false,
+                                slidesToShow: 3,
+                                slidesToScroll: 1
+                            }, _defineProperty(_settings, 'infinite', true), _defineProperty(_settings, 'autoplay', false), _defineProperty(_settings, 'prevArrow', '#prevArtikel'), _defineProperty(_settings, 'nextArrow', '#nextArtikel'), _settings)
+                        }, {
+                            breakpoint: 600,
+                            settings: {
+                                infinite: false,
+                                slidesToShow: 2,
+                                slidesToScroll: 1,
+                                autoplay: false,
+                                prevArrow: '#prevArtikel',
+                                nextArrow: '#nextArtikel'
+                            }
+                        }, {
+                            breakpoint: 480,
+                            settings: {
+                                infinite: false,
+                                slidesToShow: 1.25,
+                                slidesToScroll: 1,
+                                autoplay: false,
+                                prevArrow: '#prevArtikel',
+                                nextArrow: '#nextArtikel'
+                            }
+                        }
+                    ]
+                });
+
+                $('#artikel .item').matchHeight();
             });
-        })
-    </script>
-    <style>
-        .slick-dots {
-            padding-bottom: 20px;
-        }
-        
-        .slick-dots li.slick-active button:before,
-        .slick-dots li button:before {
-            color: #FFF;
-            opacity: 1;
-            font-size: 13px;
-            content: unset !important;
-        }
-        
-        .slick-dots li {
-            width: unset;
-        }
-        
-        .slick-dots li button {
-            background: #C9BDBD;
-            border: 1px solid #C9BDBD;
-            border-radius: 100%;
-            width: 9px;
-            height: 9px;
-        }
-        
-        .slick-dots li.slick-active button {
-            background: #976F6F;
-            border: 1px solid #976F6F;
-            border-radius: 100%;
-            width: 9px;
-            height: 9px;
-        }
-        
-        .slick-dots li.slick-active button:before {
-            color: transparent;
-        }
-        
-        .easy {
-            color: #D45700;
-        }
-        
-        .section-top h1 {
-            font-weight: bolder;
-            margin-top: 10%;
-        }
-        
-        .box-white {
-            padding: 50px 20px;
-        }
-        
-        .box-white h3 {
-            line-height: 35px;
-        }
-        
-        .box-white h1 {
-            font-weight: bold;
-        }
-        
-        .box-blog {
-            padding: 50px 20px;
-            background: #F4F0EB;
-        }
-        
-        .box-blog h2 {
-            font-weight: bold;
-        }
-        
-        .single-item {
-            padding: 50px 20px;
-            max-width: 100%;
-            overflow-x: hidden;
-            background: #F4F0EB;
-            padding-bottom: 0px;
-        }
-        
-        .single-item img {
-            max-width: 400px;
-            /* text-align: right; */
-            margin-left: 30px;
-            padding-left: 10px;
-        }
-        
-        .slick-slide {
-            height: 390px;
-        }
-        
-        .slick-slide h1 {
-            font-weight: bolder;
-        }
-        
-        .slick-dots {
-            bottom: 8px;
-        }
-    </style>
-</head>
+        </script>
+        <style>
+            .slick-dots {
+                padding-bottom: 20px;
+            }
 
-<body>
-    <nav class="navbar">
-        <div class=" container ">
-            <div class="navbar-header ">
-                <button type="button " class="navbar-toggle collapsed " data-toggle="collapse " data-target="#navbar " aria-expanded="false " aria-controls="navbar ">
-              <span class="sr-only ">Mr Exportir</span>
-              <span class="icon-bar "></span>
-              <span class="icon-bar "></span>
-              <span class="icon-bar "></span>
-            </button>
-                <a class="navbar-brand " href="# ">
-                    <img src="images/redlogo.png " class="img-responsive logo-top ">
-                </a>
-            </div>
-            <div id="navbar " class="navbar-collapse collapse ">
+            .slick-dots li button:before,
+            .slick-dots li.slick-active button:before {
+                color: #FFF;
+                opacity: 1;
+                font-size: 13px;
+                content: unset !important;
+            }
 
-                <ul class="nav navbar-nav navbar-right ">
-                    <li><a href="#">Layanan</a></li>
-                    <li><a href="#">Panduan Expor</a></li>
-                    <li><a href="#">ExportKu</a></li>
-                    <li><a href="#">Lacak Kiriman</a></li>
-                    <li class="btn-login"><a href="#">Masuk</a></li>
-                </ul>
-            </div>
-            <!--/.nav-collapse -->
-        </div>
-        <!--/.container-fluid -->
-    </nav>
+            .slick-dots li {
+                width: unset;
+            }
 
-    <div class="container">
-        <div class="section-top">
-            <h1 class="text-center">Export Jadi <span class="easy">Mudah</span></h1>
-            <ul class="nav nav-tabs">
+            .slick-dots li button {
+                background: #C9BDBD;
+                border: 1px solid #C9BDBD;
+                border-radius: 100%;
+                width: 9px;
+                height: 9px;
+            }
 
-                <li class="active tab-lacak">
-                    <a data-toggle="tab" href="#home">
-                        <h4>Lacak Kiriman</h4>
+            .slick-dots li.slick-active button {
+                background: #976F6F;
+                border: 1px solid #976F6F;
+                border-radius: 100%;
+                width: 9px;
+                height: 9px;
+            }
+
+            .slick-dots li.slick-active button:before {
+                color: transparent;
+            }
+
+            .easy {
+                color: #D45700;
+            }
+
+            .section-top h1 {
+                font-weight: bolder;
+                margin-top: 10%;
+            }
+
+            .box-white {
+                padding: 50px 20px;
+            }
+
+            .box-white h3 {
+                line-height: 35px;
+            }
+
+            .box-white h1 {
+                font-weight: bold;
+            }
+
+            .box-blog {
+                padding: 50px 20px;
+                background: #F4F0EB;
+            }
+
+            .box-blog h2 {
+                font-weight: bold;
+            }
+
+            .single-item {
+                padding: 50px 20px;
+                max-width: 100%;
+                overflow-x: hidden;
+                background: #F4F0EB;
+                padding-bottom: 0;
+            }
+
+            .single-item img {
+                max-width: 400px;
+                /* text-align: right; */
+                margin-left: 30px;
+                padding-left: 10px;
+            }
+
+            .slick-slide {
+                height: 390px;
+            }
+
+            .slick-slide h1 {
+                font-weight: bolder;
+            }
+
+            .slick-dots {
+                bottom: 8px;
+            }
+
+            .section-satu {
+                height: calc(130vh - 50px);
+                background: url("images/home_satu.png") center no-repeat;
+                background-size: cover;
+                position: relative;
+                margin-bottom: 0;
+                border-bottom: none;
+            }
+
+            .section-top h1 {
+                font-size: 58px;
+            }
+
+            .a-panduan {
+                color: #BF202F;
+                font-weight: 700;
+            }
+
+            .product-service {
+                background-color: #D1500F;
+                /*padding: 100px;*/
+            }
+
+            .product-service--title {
+                margin-top: 5%;
+                margin-bottom: 5%;
+            }
+
+            .product-service--title h1 {
+                color: white;
+                font-weight: 700;
+            }
+
+            .product-service img {
+                margin-bottom: 20%;
+            }
+
+            .box-blog--lihat {
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+            .box-blog--lihat a {
+                color: #BF202F;
+                font-weight: 700;
+            }
+
+            .content-text-slider {
+                background-color: #F5F5F5;
+                padding: 1px 15px 15px;
+                box-shadow: 2px 4px 6px 1px rgba(0, 0, 0, 0.2);
+            }
+            .content-text-slider h2 {
+                font-size: 2rem;
+                color: #444444;
+            }
+            .slide-wrapper {
+                position: relative;
+                height: fit-content;
+            }
+            .slick-disabled .fa.fa-angle-left {
+                color: #F2F2F2;
+            }
+            i.fa.fa-angle-left {
+                top: 131px;
+                left: -47px;
+                position: absolute;
+                color: black;
+                font-size: 96px;
+            }
+            i.fa.fa-angle-right {
+                top: 131px;
+                right: -47px;
+                position: absolute;
+                color: black;
+                font-size: 96px;
+            }
+            .slider {
+                width: 100%;
+                overflow: hidden;
+            }
+            .slider .item {
+                position: relative;
+                overflow: hidden;
+                box-shadow: 2px 4px 6px 1px rgba(0, 0, 0, 0.2);
+            }
+            .slider .item a.title {
+                font-family: frank-new, sans-serif !important;
+                font-size: 17px;
+                font-weight: 500;
+                font-style: normal;
+                line-height: 1.4;
+                color: #333333;
+                letter-spacing: -0.5px;
+            }
+            .slider .slick-slide {
+                margin: 0 12px;
+            }
+            .img-kategori {
+                width: 270px;
+                margin-top: unset;
+            }
+            .article--kategori .content-text {
+                background-color: #F5F5F5;
+                padding: 10px 10px 0;
+                box-shadow: 2px 4px 6px 1px rgba(0, 0, 0, 0.2);
+            }
+            .article--kategori .content-text .content-title {
+                margin-top: unset;
+            }
+            .article--video .content-image {
+                margin-left: 1rem;
+            }
+            .section-kategori {
+                margin-bottom: 5rem;
+            }
+            .slider .item a:not([class*="title"]) img {
+                display: block;
+                width: 100%;
+            }
+            .slider .item a:not([class*="title"]) {
+                display: block;
+            }
+            .slick-list,
+            .slick-slider {
+                position: relative;
+                display: block;
+            }
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #FFFFFF;
+display: table;
+    margin: auto;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border-bottom: 3px solid transparent;
+}
+
+.topnav a:hover {
+  border-bottom: 3px solid #D45700;
+}
+
+.topnav a.active {
+  border-bottom: 3px solid #D45700;
+}
+.icon-cek-harga {
+    width: 10%;
+}
+            /* 
+              ##Device = Low Resolution Tablets, Mobiles (Landscape)
+              ##Screen = B/w 481px to 767px
+            */
+
+            @media (min-width: 481px) and (max-width: 767px) {
+              .img-logo{
+                width: 50%;
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+              }
+            }
+
+            /* 
+              ##Device = Most of the Smartphones Mobiles (Portrait)
+              ##Screen = B/w 320px to 479px
+            */
+
+            @media (min-width: 320px) and (max-width: 480px) {
+              .img-logo{
+                width: 50%;
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+              }
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <div class=" container ">
+                <div class="navbar-header ">
+                    <button type="button " class="navbar-toggle collapsed " data-toggle="collapse " data-target="#navbar " aria-expanded="false " aria-controls="navbar ">
+                        <span class="sr-only ">Mr Exportir</span>
+                        <span class="icon-bar "></span>
+                        <span class="icon-bar "></span>
+                        <span class="icon-bar "></span>
+                    </button>
+                    <a class="navbar-brand " href="# ">
+                        <img src="images/logo_new.png " class="img-responsive logo-top ">
                     </a>
-                </li>
-                <li class="tab-cekharga">
-                    <a data-toggle="tab" href="#menu1">
-                        <h4>Cek Harga</h4>
-                    </a>
-                </li>
+                </div>
+                <div id="navbar " class="navbar-collapse collapse ">
 
-            </ul>
+                    <ul class="nav navbar-nav navbar-right ">
+                        <li>
+                            <a href="#">Layanan</a>
+                        </li>
+                        <li>
+                            <a href="#">Panduan Expor</a>
+                        </li>
+                        <li>
+                            <a href="#">XportKu</a>
+                        </li>
+                        <li>
+                            <a href="#">Cek Harga</a>
+                        </li>
+                        <li class="btn-login">
+                            <a href="#">Masuk</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!--/.container-fluid -->
+        </nav>
 
-            <div class="tab-content">
-                <div id="home" class="tab-pane fade in active">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3">
-                            <div class=" box-top-new ">
-                                <div class="row ">
-                                    <div class="col-md-12">
-                                        <div class="input-group">
-                                            <input id="dimensi" type="text" class="form-control" name="noresi" placeholder="Nomor Resi">
-                                            <span class="input-group-addon group-addon-resi">  <button  class="btn btn-cek"><b>Lacak</b></button></span>
+        <section class="section-satu">
+            <div class="container">
+                <div class="section-top">
+                    <h1 class="text-center">Export Jadi <span class="easy">Mudah</span></h1>
+                    <ul class="nav nav-tabs">
+
+                        <li class="active tab-lacak">
+                            <a data-toggle="tab" href="#home">
+                                <h4>Lacak Kiriman</h4>
+                            </a>
+                        </li>
+                        <li class="tab-cekharga">
+                            <a data-toggle="tab" href="#menu1">
+                                <h4>Cek Harga</h4>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade in active">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3">
+                                    <div class=" box-top-new ">
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <input id="dimensi" type="text" class="form-control" name="noresi" placeholder="Nomor Resi">
+                                                    <span class="input-group-addon group-addon-resi">
+                                                        <button  class="btn btn-cek">
+                                                            <b>Lacak</b>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div id="menu1" class="tab-pane fade">
-                    <div class="box-top-new">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <span class="input-group-addon">Dari</span>
-                                    <input id="msg" type="text" class="form-control" value="Jakarta" name="msg" disabled placeholder="Dari">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <span class="input-group-addon">Ke</span>
-                                    <input type="hidden" id="id_daerah" name="id_daerah" class="input-top">
-                                    <input type="hidden" id="daerah_text" name="daerah_text">
-                                </div>
-                            </div>
-                        </div>
-                        <br/>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="input-group">
-                                    <span class="input-group-addon">Via</span>
-                                    <select id="tipe_pengiriman" class="selectpicker form-control" data-live-search="true" title="Please select a lunch ...">
-                                      <option value="1">Udara</option>
-                                      <option value="2">Laut</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="input-group">
-                                    <span class="input-group-addon">Tipe</span>
-                                    <select id="lunch" class="selectpicker form-control" data-live-search="true" title="Please select a lunch ...">
-                                      <option>Paket</option>
-                                      <option>Dokumen</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="input-group">
-                                    <input id="panjang" type="text" class="form-control" name="panjang" placeholder="P">
-                                    <span class="input-group-addon addon-left"></span>
-                                    <input id="lebar" type="text" class="form-control" name="lebar" placeholder="L">
-                                    <span class="input-group-addon addon-left"></span>
-                                    <input id="tinggi" type="text" class="form-control" name="tinggi" placeholder="T">
-                                    <span class="input-group-addon">cm</span>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="input-group">
-                                    <input id="dimensi" type="text" class="form-control" name="dimensi" placeholder="Berat">
-                                    <span class="input-group-addon">Kg</span>
-                                </div>
-                            </div>
-                        </div>
-                        <br/>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="box-result-top" id="status" style="display: none;">
-                                    <div class="col-md-6">
-                                        <span>Total Volume: </br></span>
-                                        <span><b id="volume">0.001 </b><b> m<sup>3</sup></b> </span>
+                        <div id="menu1" class="tab-pane fade">
+<div class="topnav">
+  <a class="active" href="#General Cargo"><img src="images/box.png" class="icon-cek-harga"> General Cargo</a>
+  <a href="#Produk Pertanian"><img src="images/agriculture.png" class="icon-cek-harga"> Produk Pertanian</a>
+  <a href="#Hewan Hidup"><img src="images/animal.png" class="icon-cek-harga"> Hewan Hidup</a>
+  <a href="#Barang Berbahaya"><img src="images/fire.png" class="icon-cek-harga"> Barang Berbahaya</a>
+</div>
+
+<!-- <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Active</a>
+  </li>
+</ul> -->
+                            <div class="box-top-new">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Dari</span>
+                                            <input id="msg" type="text" class="form-control" value="Jakarta" name="msg" disabled placeholder="Dari">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Ke</span>
+                                            <input type="hidden" id="id_daerah" name="id_daerah" class="input-top">
+                                            <input type="hidden" id="daerah_text" name="daerah_text">
+                                        </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <span>Total Berat: </br></span>
-                                        <span><b id="berat">10kg</b><b> kg</b></span>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Jenis</span>
+                                            <input type="hidden" id="id_jenis_pengiriman" name="id_jenis_pengiriman" class="input-top">
+                                            <input type="hidden" id="jenis_text" name="jenis_text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Via</span>
+                                            <select id="tipe_pengiriman" class="selectpicker form-control" data-live-search="true" title="Please select a lunch ...">
+                                                <option value="1">Udara</option>
+                                                <option value="2">Laut</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Tipe</span>
+                                            <select id="lunch" class="selectpicker form-control" data-live-search="true" title="Please select a lunch ...">
+                                                <option>Paket</option>
+                                                <option>Dokumen</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <input id="panjang" type="text" class="form-control" name="panjang" placeholder="Panjang">
+                                            <span class="input-group-addon addon-left"></span>
+                                            <input id="lebar" type="text" class="form-control" name="lebar" placeholder="Lebar">
+                                            <span class="input-group-addon addon-left"></span>
+                                            <input id="tinggi" type="text" class="form-control" name="tinggi" placeholder="Tinggi">
+                                            <span class="input-group-addon">cm</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="input-group">
+                                            <input id="dimensi" type="text" class="form-control" name="dimensi" placeholder="Berat">
+                                            <span class="input-group-addon">Kg</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="box-result-top" id="status" style="display: none;">
+                                            <div class="col-md-6">
+                                                <span>Total Volume: </br>
+                                            </span>
+                                            <span>
+                                                <b id="volume">0.001 </b>
+                                                <b> m<sup>3</sup>
+                                                </b>
+                                            </span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <span>Total Berat: </br>
+                                        </span>
+                                        <span>
+                                            <b id="berat">10kg</b>
+                                            <b> kg</b>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-8 text-right">
-                                <button id="cekongkir" class="btn btn-cek"><h4>Dapatkan Harga Terbaik</h4></button>
+                                <button id="cekongkir" class="btn btn-cek">
+                                    <h4>Dapatkan Harga Terbaik</h4>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <br/>
-        <br/>
-        <div class="widget-resi">
-            <div class="header-resi">
-                <h4>EXP12345678TD</h4>
-            </div>
-            <div class="body-resi">
 
-                <ul>
+                <div class="widget-resi hidden-xs">
+                    <div class="header-resi">
+                        <h4>EXP12345678TD</h4>
+                    </div>
+                    <div class="body-resi">
 
-                    <li>
-                        <hr/>
-                        <img src="images/document.png" />
-                        <h4>Document Handling</h4>
-                    </li>
-                    <li>
-                        <hr/>
-                        <img src="images/collected.png" />
-                        <h4>Collected</h4>
-                    </li>
-                    <li>
-                        <hr/>
-                        <img src="images/delivering.png" />
-                        <h4>Delivering</h4>
-                    </li>
-                    <li>
-                        <hr/>
-                        <img src="images/delivered.png" />
-                        <h4>Delivered</h4>
-                    </li>
-                </ul>
+                        <ul>
+
+                            <li>
+                                <hr/>
+                                <img src="images/document.png"/>
+                                <h4>Document Handling</h4>
+                            </li>
+                            <li>
+                                <hr/>
+                                <img src="images/collected.png"/>
+                                <h4>Collected</h4>
+                            </li>
+                            <li>
+                                <hr/>
+                                <img src="images/delivering.png"/>
+                                <h4>Delivering</h4>
+                            </li>
+                            <li>
+                                <hr/>
+                                <img src="images/delivered.png"/>
+                                <h4>Delivered</h4>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-resi">
+                        <h4>
+                            <a class="btn-panel" href="#">
+                                <i class="fa fa-chevron-down"></i>
+                                <i class="fa fa-chevron-up" style="display: none;"></i>
+                                <span class="text">Lihat Rincian</span></a>
+                        </h4>
+                    </div>
+                    <div class="panel-table">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Local Time</th>
+                                    <th>Location</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>08/03/2020, 20:15</td>
+                                    <td>Jakarta, Indonesia</td>
+                                    <td>Shipment delivered in good condition</td>
+                                </tr>
+                                <tr>
+                                    <td>08/03/2020, 20:15</td>
+                                    <td>Jakarta, Indonesia</td>
+                                    <td>Shipment delivered in good condition</td>
+                                </tr>
+                                <tr>
+                                    <td>08/03/2020, 20:15</td>
+                                    <td>Jakarta, Indonesia</td>
+                                    <td>Shipment delivered in good condition</td>
+                                </tr>
+                                <tr>
+                                    <td>08/03/2020, 20:15</td>
+                                    <td>Jakarta, Indonesia</td>
+                                    <td>Shipment delivered in good condition</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-            <div class="footer-resi">
-                <h4><a class="btn-panel" href="#"><i class="fa fa-chevron-down"></i> <i class="fa fa-chevron-up" style="display: none;"></i> <span class="text">Lihat Rincian</span></a></h4>
-            </div>
-            <div class="panel-table">
-                <table class="table table-condensed">
-                    <thead>
-                        <tr>
-                            <th>Local Time</th>
-                            <th>Location</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>08/03/2020, 20:15</td>
-                            <td>Jakarta, Indonesia</td>
-                            <td>Shipment delivered in good condition</td>
-                        </tr>
-                        <tr>
-                            <td>08/03/2020, 20:15</td>
-                            <td>Jakarta, Indonesia</td>
-                            <td>Shipment delivered in good condition</td>
-                        </tr>
-                        <tr>
-                            <td>08/03/2020, 20:15</td>
-                            <td>Jakarta, Indonesia</td>
-                            <td>Shipment delivered in good condition</td>
-                        </tr>
-                        <tr>
-                            <td>08/03/2020, 20:15</td>
-                            <td>Jakarta, Indonesia</td>
-                            <td>Shipment delivered in good condition</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        </section>
 
         <div class="widget-price" style="display: none;">
             <table class="table table-harga">
@@ -440,26 +748,35 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row"> <img src="images/plane.png " class="icon-new"></th>
+                        <th scope="row">
+                            <img src="images/plane.png " class="icon-new"></th>
                         <td class="tipe_delivery">Air Freight</td>
-                        <td>Door To Door &nbsp;<span data-tooltip="Door to Door adalah Lorem Ipsum" data-tooltip-location="bottom"><i class="fa fa-info-circle"></i></span></td>
+                        <td>Door To Door &nbsp;<span data-tooltip="Door to Door adalah Lorem Ipsum" data-tooltip-location="bottom">
+                                <i class="fa fa-info-circle"></i></span></td>
                         <td>
-                            <b class="complete"><i class="fa fa-check-circle"></i>&nbsp; Layanan Lengkap</b> <br/>
+                            <b class="complete">
+                                <i class="fa fa-check-circle"></i>&nbsp; Layanan Lengkap</b>
+                            <br/>
                             <span class="dtd"> 1.500.000</span>
                         </td>
                         <td class="column-button">
-                            <button class="btn btn-cek"><h4>Kirim Sekarang</h4></button>
+                            <button class="btn btn-cek">
+                                <h4>Kirim Sekarang</h4>
+                            </button>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row"><img src="images/plane.png " class="icon-new"></th>
                         <td class="tipe_delivery">Air Freight</td>
-                        <td>Door To Port &nbsp;<span data-tooltip="Door to Port adalah Lorem Ipsum" data-tooltip-location="bottom"><i class="fa fa-info-circle"></i></span></td>
+                        <td>Door To Port &nbsp;<span data-tooltip="Door to Port adalah Lorem Ipsum" data-tooltip-location="bottom">
+                                <i class="fa fa-info-circle"></i></span></td>
                         <td>
                             <span class="dtp">1.500.000</span>
                         </td>
                         <td class="column-button">
-                            <button class="btn btn-cek"><h4>Kirim Sekarang</h4></button>
+                            <button class="btn btn-cek">
+                                <h4>Kirim Sekarang</h4>
+                            </button>
                         </td>
                     </tr>
 
@@ -468,150 +785,260 @@
         </div>
 
     </div>
-    </div>
-    <div class="box-red">
+</div>
+
+<div class="single-item ">
+    <div>
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
-                    <img src="images/imagewhite.png" class="img-responsive img-logo minus-margin " />
-                    <h4 class="withpadding">Undername</h4>
+                <div class="col-md-6 text-right">
+                    <h1>Panduan Ekspor 1</h1>
+                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit, sapien a consectetu</h3>
+                    <a class="a-panduan" href="#">Pelajari Lebih ></a>
                 </div>
-                <div class="col-md-3">
-                    <img src="images/imagewhite.png" class="img-responsive img-logo" />
-                    <h4 class="withpadding">Air Freight</h4>
-                </div>
-                <div class="col-md-3">
-                    <img src="images/imagewhite.png" class="img-responsive img-logo  minus-margin " />
-                    <h4 class="withpadding">Sea Freight</h4>
-                </div>
-                <div class="col-md-3">
-                    <img src="images/imagewhite.png" class="img-responsive img-logo" />
-                    <h4>Tracking Shipment</h4>
+                <div class="col-md-6">
+                    <img src="images/panduan_ekspor1.png" class="img-responsive"/>
                 </div>
             </div>
         </div>
+
     </div>
-    <div class="single-item ">
-        <div>
-            <div class="container">
+    <div>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 text-right">
+                    <h1>Panduan Ekspor 1</h1>
+                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit, sapien a consectetu</h3>
+                    <a class="a-panduan" href="#">Pelajari Lebih ></a>
+                </div>
+                <div class="col-md-6">
+                    <img src="images/panduan_ekspor1.png" class="img-responsive"/>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- <div class="box-red">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="images/imagewhite.png" class="img-responsive img-logo minus-margin "/>
+                <h4 class="withpadding">Undername</h4>
+            </div>
+            <div class="col-md-3">
+                <img src="images/imagewhite.png" class="img-responsive img-logo"/>
+                <h4 class="withpadding">Air Freight</h4>
+            </div>
+            <div class="col-md-3">
+                <img src="images/imagewhite.png" class="img-responsive img-logo  minus-margin "/>
+                <h4 class="withpadding">Sea Freight</h4>
+            </div>
+            <div class="col-md-3">
+                <img src="images/imagewhite.png" class="img-responsive img-logo"/>
+                <h4>Tracking Shipment</h4>
+            </div>
+        </div>
+    </div>
+</div> -->
+<section class="product-service">
+    <div class="container">
+        <div class="row">
+            <div class="product-service--title text-center">
+                <h1>Product & Service</h1>
+            </div>
+            <div class="col-md-3">
+                <img src="images/undername.png" class="img-responsive img-logo"/>
+            </div>
+            <div class="col-md-3">
+                <img src="images/airfreight.png" class="img-responsive img-logo"/>
+            </div>
+            <div class="col-md-3">
+                <img src="images/seafreight.png" class="img-responsive img-logo"/>
+            </div>
+            <div class="col-md-3">
+                <img src="images/tracking.png" class="img-responsive img-logo"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="box-white ">
+    <div class="container-fluid ">
+        <div class="row ">
+            <div class="col-md-7 ">
+                <img src="images/ipad.png " class="img-responsive "/>
+            </div>
+            <div class="col-md-4 ">
+                <h1>ExportKu</h1>
+                <h3>Kelola ekspor anda di sini. Rencanakan ekspor dan pantau pengiriman dengan mudah.</h3>
+                <br/>
+                <br/>
+                <button class="btn btn-cek ">
+                    <h4>Ketahui Lebih</h4>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="box-blog ">
+    <div class="container ">
+        <div class="row ">
+            <div class="col-md-12">
                 <div class="row">
-
-                    <div class="col-md-6 text-right">
-                        <h1>Panduan Ekspor 1</h1>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit, sapien a consectetu</h3>
-                    </div>
                     <div class="col-md-6">
-                        <img src="images/redicon.png" class="img-responsive" />
+                        <h2>Artikel Terbaru</h2>
                     </div>
-
+                    <div class="col-md-6 box-blog--lihat text-right">
+                        <a class="" href="#">Lihat Semua ></a>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <div class="slide-wrapper">
+            <div class="row hidden-xs">
+                <a class="prevArrowNav" id="prevArtikel">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </a>
+                <a class="nextArrowNav" id="nextArtikel">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="slider" id="artikel">
+                <div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="img-fullwidth rounded" src="images/blog_thumb1.png" alt="Image title">
+                        </a>
+                        <div class="content-text-slider">
+                            <a href="#">
+                                <h2>Manfaat Ekspor untuk Industri Dalam Negeri</h2>
+                            </a>
+                            <div class="fs-12 media-explainer">05 Maret 2019</div>
+                            <p>Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="img-fullwidth rounded" src="images/blog_thumb1.png" alt="Image title">
+                        </a>
+                        <div class="content-text-slider">
+                            <a href="#">
+                                <h2>Manfaat Ekspor untuk Industri Dalam Negeri</h2>
+                            </a>
+                            <div class="fs-12 media-explainer">05 Maret 2019</div>
+                            <p>Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="img-fullwidth rounded" src="images/blog_thumb2.png" alt="Image title">
+                        </a>
+                        <div class="content-text-slider">
+                            <a href="#">
+                                <h2>Manfaat Ekspor untuk Industri Dalam Negeri</h2>
+                            </a>
+                            <div class="fs-12 media-explainer">05 Maret 2019</div>
+                            <p>Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="img-fullwidth rounded" src="images/blog_thumb1.png" alt="Image title">
+                        </a>
+                        <div class="content-text-slider">
+                            <a href="#">
+                                <h2>Manfaat Ekspor untuk Industri Dalam Negeri</h2>
+                            </a>
+                            <div class="fs-12 media-explainer">05 Maret 2019</div>
+                            <p>Lorem ipsum dolor sit amet, cu audiam moderatius quo, ea enim audire eleifend nam. Pri ut case assum, te saperet laoreet.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
         </div>
-        <div>
-            <div class="container">
+    </div>
+</div>
+<footer>
+    <div class="container ">
+        <div class="row ">
+            <br/>
+            <div class="col-md-12 ">
                 <div class="row">
-
-                    <div class="col-md-6 text-right">
-                        <h1>Panduan Ekspor 1</h1>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit, sapien a consectetu</h3>
+                    <div class="col-md-3 ">
+                        <img src="images/footer.png " class="img-responsive logo-bottom">
                     </div>
+                </div>
+                <br/>
+                <div class="row">
                     <div class="col-md-6">
-                        <img src="images/redicon.png" class="img-responsive" />
+                        <ul class="list-footer ">
+                            <li>Tentang Xportir</li>
+                            <li>Bantuan</li>
+                            <li>Blog</li>
+                            <li>Karir</li>
+                        </ul>
+                        <ul class="list-footer ">
+                            <li>Kebijakan Privasi</li>
+                            <li>Syarat & Ketentuan</li>
+                            <li>Sitemap</li>
+                        </ul>
+
                     </div>
-
+                    <div class="col-md-2 pull-right">
+                        <img src="images/playstore.png " class="img-responsive playstore"/>
+                    </div>
                 </div>
+                <hr class="border-footer"/>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="copyrighted">© 2020 PT. Triton Nusantara Tangguh</p>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <ul class="social ">
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-facebook-f "></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-twitter "></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-instagram "></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-youtube-play "></i>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
             </div>
 
-
-        </div>
-
-    </div>
-
-
-
-
-    <div class="box-white ">
-        <div class="container-fluid ">
-            <div class="row ">
-                <div class="col-md-7 ">
-                    <img src="images/ipad.png " class="img-responsive " />
-                </div>
-                <div class="col-md-4 ">
-                    <h1>ExportKu</h1>
-                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit, sapien `a consectetu</h3>
-                    <br/>
-                    <br/>
-                    <button class="btn btn-cek "><h4>Learn More</h4></button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="box-blog ">
-        <div class="container ">
-            <div class="row ">
-                <div class="col-md-12 ">
-                    <h2 class="text-center ">Blog</h2>
-                </div>
-                <div class="col-md-4 ">
-                    <img src="images/blogimg.png " class="img-responsive " />
-                    <h3>Jasa Ekspor Kacang Mede</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit, sapien a consectetur tempor, neque urna vehicula elit, et dapibus magna magna id ligula.</p>
-                </div>
-                <div class="col-md-4 ">
-                    <img src="images/blogimg.png " class="img-responsive " />
-                    <h3>Jasa Ekspor Kacang Mede</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit, sapien a consectetur tempor, neque urna vehicula elit, et dapibus magna magna id ligula.</p>
-                </div>
-                <div class="col-md-4 ">
-                    <img src="images/blogimg.png " class="img-responsive " />
-                    <h3>Jasa Ekspor Kacang Mede</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit, sapien a consectetur tempor, neque urna vehicula elit, et dapibus magna magna id ligula.</p>
-                </div>
-            </div>
         </div>
     </div>
-    <footer>
-        <div class="container ">
-            <div class="row ">
-                <div class="col-md-2 ">
-                    <img src="images/whitelogo.png " class="img-responsive " />
-                </div>
-                <div class="col-md-6 ">
-                    <ul class="list-footer ">
-                        <li>ExportKu</li>
-                        <li>ExportKu</li>
-                        <li>ExportKu</li>
-                    </ul>
-                    <ul class="list-footer ">
-                        <li>ExportKu</li>
-                        <li>ExportKu</li>
-                        <li>ExportKu</li>
-                    </ul>
-                    <ul class="list-footer ">
-                        <li>ExportKu</li>
-                        <li>ExportKu</li>
-                        <li>ExportKu</li>
-                    </ul>
-                </div>
-                <div class="col-md-4 ">
-                    <h4>Kontak Kami</h4>
-                    <p>Alamat : 123 Main Street, St. NW Ste, 1 Washington, DC,USA.</p>
-                    <p>Phone : +56 (0) 012 345 6789 cobusiness@example.com
-                    </p>
-                    <ul class="social ">
-                        <li><i class="fa fa-facebook-f "></i></li>
-                        <li><i class="fa fa-twitter "></i></li>
-                        <li><i class="fa fa-instagram "></i></li>
-                        <li><i class="fa fa-linkedin "></i></li>
-                        <li><i class="fa fa-pinterest-p "></i></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Latest compiled and minified JavaScript -->
+</footer>
+<!-- Latest compiled and minified JavaScript -->
 
 </body>
 

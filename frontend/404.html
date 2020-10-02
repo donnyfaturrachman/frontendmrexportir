@@ -19,96 +19,79 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="undefined" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
-</head>
-<style>
-    .navbar-header {
-        text-align: center;
-        width: 100%;
-    }
-    
-    .navbar-brand {
-        float: none;
-    }
-    
-    .logo-top {
-        margin: 0 auto;
-    }
-    
-    .navbar {
-        margin-bottom: 0px;
-    }
-    
-    section.wrapper {
-        background: #F8F8F8;
-    }
-    
-    .login-box {
-        margin-top: 50px;
-        background: #FFFFFF;
-        padding: 30px 35px;
-        margin-bottom: 150px;
-    }
-    
-    .btn-cek {
-        font-weight: bold;
-        padding: 5px 26px !important;
-        font-size: 17px;
-    }
-    
-    .forgot a {
-        color: #C2262D;
-    }
-</style>
+    <script>
+        var clicked = false
+        $(document).ready(function() {
 
-<body>
-
-    <nav class="navbar">
-        <div class=" container ">
-            <div class="navbar-header ">
-
-                <a class="navbar-brand " href="# ">
-                    <img src="images/logo_new.png " class="img-responsive logo-top ">
-                </a>
-
-            </div>
-
-
-
-
-            <!--/.nav-collapse -->
-        </div>
-        <!--/.container-fluid -->
-    </nav>
-    <section class="wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="text-center">Reset Password </h3>
-                    <h4 class="text-center">Lupa Password akun ExportKu </h4>
+            $(".btn-panel").click(function(event) {
+                event.preventDefault();
+                $(".panel-table").slideToggle("slow");
+                if (clicked == false) {
+                    $(".text").text(" Sembunyikan Rincian")
+                    $("i.fa.fa-chevron-down").hide()
+                    $("i.fa.fa-chevron-up").show()
+                    clicked = true
+                } else {
+                    $(".text").text(" Lihat Rincian")
+                    $("i.fa.fa-chevron-down").show()
+                    $("i.fa.fa-chevron-up").hide()
+                    clicked = false
+                }
+            });
+        })
+    </script>
+    <style type="text/css">
+        .big-hero {
+            height: calc(100vh - 60px);
+            background: url(images/404_bg.png) top center no-repeat fixed;
+            background-size: cover;
+            position: relative;
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+    </style>
+    <body>
+        <nav class="navbar">
+            <div class=" container ">
+                <div class="navbar-header ">
+                    <button type="button " class="navbar-toggle collapsed " data-toggle="collapse " data-target="#navbar " aria-expanded="false " aria-controls="navbar ">
+                        <span class="sr-only ">Mr Exportir</span>
+                        <span class="icon-bar "></span>
+                        <span class="icon-bar "></span>
+                        <span class="icon-bar "></span>
+                    </button>
+                    <a class="navbar-brand " href="# ">
+                        <img src="images/logo_new.png " class="img-responsive logo-top ">
+                    </a>
                 </div>
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="login-box">
-                        <form action="/action_page.php">
-                            <div class="form-group">
-                                <input type="password" placeholder="Password Baru" class="form-control" id="password">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" placeholder="Ulangi Password Baru" class="form-control" id="password">
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 text-center">
-                                    <button type="button" class="btn btn-cek">Simpan</button>
-                                </div>
+                <div id="navbar " class="navbar-collapse collapse ">
 
-                            </div>
-
-
-                        </form>
-                    </div>
+                    <ul class="nav navbar-nav navbar-right ">
+                        <li>
+                            <a href="#">Layanan</a>
+                        </li>
+                        <li>
+                            <a href="#">Panduan Expor</a>
+                        </li>
+                        <li>
+                            <a href="#">XportKu</a>
+                        </li>
+                        <li>
+                            <a href="#">Cek Harga</a>
+                        </li>
+                        <li class="btn-login">
+                            <a href="#">Masuk</a>
+                        </li>
+                    </ul>
                 </div>
+                <!--/.nav-collapse -->
             </div>
-        </div>
-    </section>
+            <!--/.container-fluid -->
+        </nav>
+
+        <img src="images/404_bg.png " class="img-responsive">
+        <!-- <div class="big-hero"></div> -->
+
         <footer>
             <div class="container ">
                 <div class="row ">
@@ -177,6 +160,8 @@
                 </div>
             </div>
         </footer>
-</body>
+        <!-- Latest compiled and minified JavaScript -->
+
+    </body>
 
 </html>

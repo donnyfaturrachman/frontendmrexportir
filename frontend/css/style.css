@@ -48,6 +48,7 @@ body {
     border: 1.1px solid #bebebe;
     border-radius: 8px;
     padding: 30px 51px;
+    background-color:  #FFFFFF;
 }
 
 .tab-lacak {
@@ -467,12 +468,14 @@ i.fa.fa-facebook-f {
 }
 
 .widget-resi {
+    margin-top: 40px;
     margin-bottom: 40px;
 }
 
 .body-resi {
     padding: 30px 20px;
     border: 1px solid #ddd;
+    background-color: white;
 }
 
 .body-resi ul li {
@@ -515,6 +518,7 @@ i.fa.fa-facebook-f {
 
 .panel-table {
     display: none;
+    background-color: white;
 }
 
 .panel-table thead {
