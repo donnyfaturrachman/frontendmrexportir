@@ -1,6 +1,8 @@
 <html>
 
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>mrexportir</title>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/fonts/slick.eot">
@@ -413,6 +415,9 @@
     margin-bottom: 0;
     height: calc(85vh - 120px);
 }
+.group-addon-resi {
+    background-color: #B3373D;
+}
         </style>
         <script>
             $(function () {
@@ -574,7 +579,17 @@
                             <p>Bagi kawan eksportir yang penasaran dan membutuhkan informasi lebih lanjut dapat menghubungi kontak MISTER EXPORTIR di Whatsapp 0895 3434 04471 </p>
 
                         </div>
-                        <div class="widget-newsletter">
+                        <div class="widget-newsletter hidden-xs">
+                            <div class="input-group">
+                                <input id="dimensi" type="text" class="form-control" name="noresi" placeholder="Masukan Email Anda...">
+                                <span class="input-group-addon group-addon-resi">
+                                    <button  class="btn btn-cek">
+                                        <b>Berlangganan</b>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="visible-xs-block">
                             <div class="input-group">
                                 <input id="dimensi" type="text" class="form-control" name="noresi" placeholder="Masukan Email Anda...">
                                 <span class="input-group-addon group-addon-resi">
