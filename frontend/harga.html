@@ -100,6 +100,34 @@
             padding-bottom: 35px;
             font-weight: bolder;
         }
+            .topnav {
+                overflow: hidden;
+                background-color: #FFFFFF;
+                display: table;
+                margin: auto;
+            }
+
+            .topnav a {
+                float: left;
+                display: block;
+                color: black;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+                border-bottom: 3px solid transparent;
+            }
+
+            .topnav a:hover {
+                border-bottom: 3px solid #D45700;
+            }
+
+            .topnav a.active {
+                border-bottom: 3px solid #D45700;
+            }
+            .icon-cek-harga {
+                width: 10%;
+            }
     </style>
 
     <body>
@@ -144,18 +172,31 @@
         <h1 class="text-center title-page">Cek Harga</h1>
         <div class="container">
             <div class="box-top-new">
+                <div class="topnav">
+                    <a class="active" href="#General Cargo"><img src="images/box.png" class="icon-cek-harga"> General Cargo</a>
+                    <a href="#Produk Pertanian"><img src="images/agriculture.png" class="icon-cek-harga"> Produk Pertanian</a>
+                    <a href="#Hewan Hidup"><img src="images/animal.png" class="icon-cek-harga"> Hewan Hidup</a>
+                    <a href="#Barang Berbahaya"><img src="images/fire.png" class="icon-cek-harga"> Barang Berbahaya</a>
+                </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <div class="input-group">
                             <span class="input-group-addon">Dari</span>
                             <input id="msg" type="text" class="form-control" value="Jakarta" name="msg" disabled placeholder="Dari">
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <div class="input-group">
                             <span class="input-group-addon">Ke</span>
                             <input type="hidden" id="id_daerah" name="id_daerah" class="input-top">
                             <input type="hidden" id="daerah_text" name="daerah_text">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">Jenis</span>
+                            <input type="hidden" id="id_jenis_pengiriman" name="id_jenis_pengiriman" class="input-top">
+                            <input type="hidden" id="jenis_text" name="jenis_text">
                         </div>
                     </div>
                 </div>
