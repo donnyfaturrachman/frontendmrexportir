@@ -186,7 +186,7 @@
                     ]
                 });
 
-                $('#artikel .item').matchHeight();
+                // $('#artikel .item').matchHeight();
             });
         </script>
         <style>
@@ -411,47 +411,46 @@
                 display: block;
             }
 
+            .topnav {
+                overflow: hidden;
+                background-color: #FFFFFF;
+                display: table;
+                margin: auto;
+            }
 
-.topnav {
-  overflow: hidden;
-  background-color: #FFFFFF;
-display: table;
-    margin: auto;
-}
+            .topnav a {
+                float: left;
+                display: block;
+                color: black;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+                border-bottom: 3px solid transparent;
+            }
 
-.topnav a {
-  float: left;
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  border-bottom: 3px solid transparent;
-}
+            .topnav a:hover {
+                border-bottom: 3px solid #D45700;
+            }
 
-.topnav a:hover {
-  border-bottom: 3px solid #D45700;
-}
-
-.topnav a.active {
-  border-bottom: 3px solid #D45700;
-}
-.icon-cek-harga {
-    width: 10%;
-}
+            .topnav a.active {
+                border-bottom: 3px solid #D45700;
+            }
+            .icon-cek-harga {
+                width: 10%;
+            }
             /* 
               ##Device = Low Resolution Tablets, Mobiles (Landscape)
               ##Screen = B/w 481px to 767px
             */
 
             @media (min-width: 481px) and (max-width: 767px) {
-              .img-logo{
-                width: 50%;
-                max-width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-              }
+                .img-logo {
+                    width: 50%;
+                    max-width: 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             }
 
             /* 
@@ -460,12 +459,12 @@ display: table;
             */
 
             @media (min-width: 320px) and (max-width: 480px) {
-              .img-logo{
-                width: 50%;
-                max-width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-              }
+                .img-logo {
+                    width: 50%;
+                    max-width: 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             }
         </style>
     </head>
@@ -550,14 +549,14 @@ display: table;
                             </div>
                         </div>
                         <div id="menu1" class="tab-pane fade">
-<div class="topnav">
-  <a class="active" href="#General Cargo"><img src="images/box.png" class="icon-cek-harga"> General Cargo</a>
-  <a href="#Produk Pertanian"><img src="images/agriculture.png" class="icon-cek-harga"> Produk Pertanian</a>
-  <a href="#Hewan Hidup"><img src="images/animal.png" class="icon-cek-harga"> Hewan Hidup</a>
-  <a href="#Barang Berbahaya"><img src="images/fire.png" class="icon-cek-harga"> Barang Berbahaya</a>
-</div>
+                            <div class="topnav">
+                                <a class="active" href="#General Cargo"><img src="images/box.png" class="icon-cek-harga"> General Cargo</a>
+                                <a href="#Produk Pertanian"><img src="images/agriculture.png" class="icon-cek-harga"> Produk Pertanian</a>
+                                <a href="#Hewan Hidup"><img src="images/animal.png" class="icon-cek-harga"> Hewan Hidup</a>
+                                <a href="#Barang Berbahaya"><img src="images/fire.png" class="icon-cek-harga"> Barang Berbahaya</a>
+                            </div>
 
-<!-- <ul class="nav nav-tabs">
+                            <!-- <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" href="#">Active</a>
   </li>
