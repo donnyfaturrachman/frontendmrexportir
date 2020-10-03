@@ -15,7 +15,11 @@ body {
 }
 
 .logo-top {
-    max-width: 150px;
+    max-width: 200px;
+}
+
+.logo-bottom {
+    width: 80%;
 }
 
 .navbar-nav>li {
@@ -48,7 +52,7 @@ body {
     border: 1.1px solid #bebebe;
     border-radius: 8px;
     padding: 30px 51px;
-    background-color:  #FFFFFF;
+    background-color: #FFFFFF;
 }
 
 .tab-lacak {
