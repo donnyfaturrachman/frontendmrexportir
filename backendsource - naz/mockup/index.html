@@ -1460,9 +1460,7 @@
 
         $(document).on('click', '#remove-rincian-wrapper', function (e) {
             e.preventDefault();
-            // console.log($(this).val(),'masuk');
-            // $(this).closest("input").remove();
-            $('#rincian-barang'+count+'').remove();
+            $(this).parent().parent().parent().parent().remove();
             count--;
         });
 
