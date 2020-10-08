@@ -2544,7 +2544,6 @@
             }
 
             $(document).on('click', '#add-rincian-wrapper', function() {
-                console.log('add', count);
                 count++;
                 dynamic_field(count);
 
@@ -2559,10 +2558,10 @@
         });
 
         $(document).ready(function() {
-            var count = 0;
-            dynamic_field(count);
+            var count2 = 0;
+            dynamic_field2(count2);
 
-            function dynamic_field(number) {
+            function dynamic_field2(number) {
                 var html = '';
                 html += '<div class="row" id="item-doc' + number + '">';
                 html += '<div class="col-md-6">';
@@ -2585,7 +2584,7 @@
                 html += '<a href="#" id="remove-item-doc-wrapper" class="btn btn-outline-dark btn-icon mg-r-5" style=" border-color: transparent !important; ">';
                 html += '<div>';
                 html += '<i class="icon ion-trash-a" style=" font-size: 22px; "></i>';
-                html += '<input type="hidden" id="count_temp" name="count_temp" value="' + number + '">';
+                html += '<input type="hidden" id="count_temp2" name="count_temp2" value="' + number + '">';
                 html += '</div>';
                 html += '</a>';
                 html += '</div>';
@@ -2599,24 +2598,23 @@
             }
 
             $(document).on('click', '#add-item-doc-wrapper', function() {
-                console.log('add', count);
-                count++;
-                dynamic_field(count);
+                count2++;
+                dynamic_field2(count2);
 
             });
 
             $(document).on('click', '#remove-item-doc-wrapper', function(e) {
                 e.preventDefault();
-                $(this).parent().parent().parent().parent().remove();
-                count--;
+                $(this).parent().parent().parent().parent().parent().remove();
+                count2--;
             });
         });
 
         $(document).ready(function() {
-            var count = 0;
-            dynamic_field(count);
+            var count3 = 0;
+            dynamic_field3(count3);
 
-            function dynamic_field(number) {
+            function dynamic_field3(number) {
                 var html = '';
                 html += '<div class="row" id="item-non-doc' + number + '">';
                 html += '<div class="col-md-6">';
@@ -2643,10 +2641,10 @@
                 html += '<input type="text" class="form-control" placeholder="Qty" />';
                 html += '<div class="input-group-prepend">';
                 html += '<span class="input-group-text">Pallete</span>';
-                html += '<a href="#" id="remove-item-doc-wrapper" class="btn btn-outline-dark btn-icon mg-r-5" style=" border-color: transparent !important; ">';
+                html += '<a href="#" id="remove-item-non-doc-wrapper" class="btn btn-outline-dark btn-icon mg-r-5" style=" border-color: transparent !important; ">';
                 html += '<div>';
                 html += '<i class="icon ion-trash-a" style=" font-size: 22px; "></i>';
-                html += '<input type="hidden" id="count_temp" name="count_temp" value="' + number + '">';
+                html += '<input type="hidden" id="count_temp3" name="count_temp3" value="' + number + '">';
                 html += '</div>';
                 html += '</a>';
                 html += '</div>';
@@ -2660,16 +2658,15 @@
             }
 
             $(document).on('click', '#add-item-non-doc-wrapper', function() {
-                console.log('add', count);
-                count++;
-                dynamic_field(count);
+                count3++;
+                dynamic_field3(count3);
 
             });
 
             $(document).on('click', '#remove-item-non-doc-wrapper', function(e) {
                 e.preventDefault();
-                $(this).parent().parent().parent().parent().remove();
-                count--;
+                $(this).parent().parent().parent().parent().parent().remove();
+                count3--;
             });
         });
     </script>
